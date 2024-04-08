@@ -1,2 +1,50 @@
+// Colors
+:root
+  --color: white
+  --bg: grey
+  --bg-cursor: #3BFB2A
+
+// Layout
+html, body
+  height: 100%
+
 body
-  background: red
+  background: var(--bg)
+
+  color: var(--color)
+  font-size: 12px
+  font-family: 'WixMadeforDisplay', sans-serif
+
+.page
+  width: 100%
+  max-width: 1440px
+  margin: 0 auto
+  padding: 20px
+
+  @media screen and (max-width: 1024px)
+    min-width: 375px
+
+// Reset
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+h1,h2,h3,h4,h5,h6
+  font-size: inherit
+  font-weight: normal
+
+%button
+  border: none
+  box-shadow: none
+  background: none
+  outline: none
+  border-radius: 0
+
+button
+  @extend %button
+
+section
+  position: relative
+
+@import grid.sass

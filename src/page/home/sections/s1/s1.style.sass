@@ -1,0 +1,37 @@
+.s1
+  height: 100% // TODO: check how I made 100height in previous MaxPirogov project
+  overflow: hidden
+
+.s1-title
+  position: absolute
+  top: 0
+  left: 0
+  font-size: 12px
+
+.s1-video
+  display: block
+  width: 200px
+
+.parallax-button
+  transform: translateX(var(--x)) translateY(var(--y))
+
+.play-button
+  position: absolute
+  left: calc(50% - 11px)
+  top: calc(50% - 14px)
+  z-index: 1
+
+  width: 0
+  height: 0
+  border-left: 23px solid var(--bg-cursor)
+  border-top: 14px solid transparent
+  border-bottom: 14px solid transparent
+
+  font-size: 0
+  color: transparent
+
+  cursor: pointer
+  transition: top 300ms ease-in, border 300ms linear, transform 200ms linear
+  &.paused
+    border: 14px solid var(--bg-cursor)
+    top: calc(10% - 14px)
