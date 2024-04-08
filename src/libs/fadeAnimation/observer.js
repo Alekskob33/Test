@@ -4,7 +4,6 @@ export default class Observer {
   }
 
   observe(targetElem) {
-    console.log('🚀 ~ targetElem:', targetElem);
     this.observer.observe(targetElem);
   }
 

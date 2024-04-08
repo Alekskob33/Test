@@ -1,5 +1,5 @@
 const playButtonParallax = {
-  rootElem: document.querySelector('.video-wrapper'),
+  rootElem: document.querySelector('#small-video'),
   button: document.querySelector('.parallax-button'),
 
   calcPosition({ x, y }) {

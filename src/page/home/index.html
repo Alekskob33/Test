@@ -16,17 +16,35 @@
       <button class="play-button parallax-button">play</button>
       <h1 class="s1-title js-auto-fade">MAX—DESIGNER</h1>
 
-      <div class="video-wrapper js-auto-fade">
+      <div class="video-wrapper">
+        <!-- Small video -->
+        <div class="small-video-wrapper center-content">
+          <video
+            id="small-video"
+            playsinline
+            autoplay
+            loop
+            muted
+            poster="./sections/s1/assets/video-poster.png"
+            preload
+          >
+            <!-- <source src="./assets/s1/clip.mp4" type="video/webm" /> -->
+            <source
+              src="./sections/s1/assets/Showreel2023.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+
+        <!-- Main video -->
         <video
-          class="s1-video"
+          id="main-video"
           playsinline
-          autoplay-off
           loop
           muted
           poster="./sections/s1/assets/video-poster.png"
           preload
         >
-          <!-- <source src="./assets/s1/clip.mp4" type="video/webm" /> -->
           <source
             src="./sections/s1/assets/Showreel2023.mp4"
             type="video/mp4"

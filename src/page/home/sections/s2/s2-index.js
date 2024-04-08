@@ -8,4 +8,4 @@ const tape = new Tape({
   speed: 1.3,
 });
 
-tape.start();
+// tape.start();
