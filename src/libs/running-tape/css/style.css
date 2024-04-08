@@ -1,0 +1,27 @@
+.tape-screen {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.positioned-tape {
+  position: relative;
+  transform: translateX(var(--x, 0));
+
+  display: flex;
+  gap: calc(var(--gap) * 1px);
+}
+
+.super-group,
+.group {
+  flex: none;
+  display: flex;
+  gap: calc(var(--gap) * 1px);
+  white-space: nowrap;
+
+  /* border: 1px solid #000; */
+}
+
+/* .super-group:nth-child(2) {
+  background: rgb(255, 200, 200);
+} */
