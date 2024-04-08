@@ -15,8 +15,14 @@ export default class VideoManager {
 
   init() {
     if (this.playBtn && this.validated) {
+      // Click on 'button' OR 'small-video'
+      this.smallVideo.video.onclick = this.handleClickOnVideo.bind(this);
       this.playBtn.onclick = this.handlePlayButton.bind(this);
     }
+  }
+  handleClickOnVideo() {
+    if (this.smallVideo.isPaused) return;
+    this.handlePlayButton();
   }
 
   handlePlayButton() {
