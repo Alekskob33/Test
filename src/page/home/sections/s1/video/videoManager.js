@@ -1,12 +1,12 @@
 import MainVideo from './mainVideo.js';
-import HeaderVideo from './video.js';
+import SmallVideo from './smallVideo.js';
 
 export default class VideoManager {
   constructor({ smallVideo, mainVideo }) {
     this.validated = this.isValidInput([smallVideo, mainVideo]);
     if (!this.validated) return;
 
-    this.smallVideo = new HeaderVideo(smallVideo);
+    this.smallVideo = new SmallVideo(smallVideo);
     this.mainVideo = new MainVideo(mainVideo);
     this.playBtn = document.querySelector('.play-button');
 
@@ -31,6 +31,7 @@ export default class VideoManager {
 
   clickPlay() {
     this.resetTransitionListening();
+    this.smallVideo.hide();
 
     this.mainVideo.show();
     this.mainVideo.play();
@@ -39,25 +40,15 @@ export default class VideoManager {
 
     this.awaitTransitionEnd(() => {
       this.smallVideo.stop();
-      this.smallVideo.hide();
     });
-  }
-
-  awaitTransitionEnd(cb) {
-    this.mainVideo.video.addEventListener(
-      'transitionend',
-      this.onTransitionEnd(() => {
-        cb();
-      })
-    );
   }
 
   clickStop() {
     this.resetTransitionListening();
+    this.smallVideo.show();
 
     this.mainVideo.hide();
     this.mainVideo.offSound();
-    this.smallVideo.show();
     this.toggleButtonState();
 
     this.smallVideo.play();
@@ -65,6 +56,15 @@ export default class VideoManager {
     this.awaitTransitionEnd(() => {
       this.mainVideo.stop();
     });
+  }
+
+  awaitTransitionEnd(cb) {
+    this.smallVideo.video.addEventListener(
+      'transitionend',
+      this.onTransitionEnd(() => {
+        cb();
+      })
+    );
   }
 
   onTransitionEnd(cb = () => {}) {

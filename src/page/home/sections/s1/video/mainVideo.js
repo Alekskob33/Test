@@ -5,16 +5,6 @@ export default class MainVideo extends HeaderVideo {
     super(elem);
   }
 
-  show() {
-    this.video.style.clipPath = 'rect(0 0% 100% 0)';
-    this.video.style.opacity = 1;
-
-    setTimeout(() => {
-      this.video.style.transition = 'clip-path 3s linear';
-      this.video.style.clipPath = 'rect(0 100% 100% 0)';
-    }, 0);
-  }
-
   play() {
     this.video.muted = false;
     super.play();
