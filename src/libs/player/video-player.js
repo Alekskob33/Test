@@ -1,4 +1,4 @@
-export default class HeaderVideo {
+export default class VideoPlayer {
   constructor(elem) {
     this.video = elem;
   }
@@ -24,6 +24,14 @@ export default class HeaderVideo {
   stop() {
     this.video.pause();
   }
+
+  volumeOff() {
+    this.video.volume = 0;
+  }
+  volumeOn() {
+    this.video.volume = 1;
+  }
+
   toggle() {
     if (this.isPaused) {
       return this.play();
