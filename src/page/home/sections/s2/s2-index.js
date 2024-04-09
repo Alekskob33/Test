@@ -12,6 +12,10 @@ if (tapeContainer) {
     speed: 1.3,
   });
 
+  /* TODO: the library 'running-tape' need to add 'resize' handler 
+    to re-calculate and regenerate inner elements
+  */
+
   // tape.start();
 }
 
