@@ -9,6 +9,7 @@ export default class FadeAnimation {
     }, 0);
   }
   fadeOut(elem) {
+    elem.style.transition = 'opacity 300ms 0ms ease-in';
     elem.style.opacity = 0.0;
   }
 }
