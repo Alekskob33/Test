@@ -1,1 +1,19 @@
+@import ../../../../grid
 // .s4
+
+.s4-images-box
+  @extend %square-grid
+  grid-template-columns: repeat(2, 1fr)
+  align-items: start
+
+.s4-grid-cell
+  @extend %grid-item
+  aspect-ratio: unset
+  padding: 0
+
+  .cell
+    @extend .center-content
+    width: 100%
+    padding: 15%
+  img
+    opacity: 1
