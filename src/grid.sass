@@ -2,3 +2,21 @@
   display: flex
   justify-content: center
   align-items: center
+
+// Square grid
+%square-grid
+  display: grid
+  width: 100%
+  grid-template-columns: repeat(3, 1fr)
+  grid-auto-rows: 1fr
+
+%grid-item
+  @extend .center-content
+  aspect-ratio: 1 / 1
+  padding: 15%
+
+  box-shadow: 0px 0 0 1px green
+  img
+    max-height: 100%
+    max-width: var(--max-w, 100%)
+    opacity: 0
