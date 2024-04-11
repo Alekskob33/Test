@@ -1,39 +1,33 @@
-import ViewportObserver from '../../../../../libs/observer/observer.js';
-import PreviewAnimator from './preview-animator.js';
+import { observeElements } from '../../../../../libs/observe-elements.js';
+import { animationManager } from './animator.js';
+import { textElements } from './text-elements.js';
 
-export default class AnimationManager {
+export default class previewManager {
   constructor() {
-    this.visibleTextIndex = null;
+    this.textManager = textElements;
+    this.animator = animationManager;
 
-    // DOM elements
-    this.previewContainer = document.querySelector('.s3-fixed-container');
-    this.textElements = document.querySelectorAll('.s3-text-box');
-    // Observe
-    this.viewportObserver = this.initObserver();
-    this.viewportObserver.observeCollection(this.textElements);
-    // Animator
-    this.animator = new PreviewAnimator(this.previewContainer);
+    if (this.animator.previewContainer) {
+      this.observe();
+    }
   }
 
-  initObserver() {
-    const observer = new ViewportObserver(this.handleIntersecting.bind(this), {
-      threshold: 0.5,
-    });
-    return observer;
-  }
+  observe() {
+    const elements = this.textManager.textElements;
 
-  handleIntersecting(entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting === true) {
-        this.updateCurrentTextIndex(entry.target);
+    observeElements(elements, {
+      onAppear: (el) => {
+        this.textManager.updateCurrentIndex(el);
 
-        const images = entry.target.querySelectorAll('img[data-target-square]');
+        const images = el.querySelectorAll('img[data-target-square]');
         this.updatePreview(images);
-      } else {
-        if (this.isFinalElem(entry.target)) {
+      },
+      onDisappear: (el) => {
+        if (this.textManager.isFinalElem(el)) {
           this.breakPreview();
         }
-      }
+      },
+      options: { threshold: 0.5 },
     });
   }
 
@@ -44,30 +38,8 @@ export default class AnimationManager {
   }
 
   breakPreview() {
-    this.visibleTextIndex = null;
+    this.textManager.visibleElemIndex = null;
     this.animator.hideContainer();
     this.animator.hideAllImages();
-  }
-
-  getElemIndex(elem) {
-    const elemIndex = [...this.textElements].findIndex((el) => el === elem);
-    return elemIndex === -1 ? null : elemIndex;
-  }
-  updateCurrentTextIndex(elem) {
-    const currentElemIndex = this.getElemIndex(elem);
-    this.visibleTextIndex = currentElemIndex;
-  }
-  isLastTextGone(elem) {
-    const lastIndex = this.textElements.length - 1;
-    const isLast = this.getElemIndex(elem) === lastIndex;
-
-    return isLast && this.visibleTextIndex === lastIndex;
-  }
-  isFirstTextGone(elem) {
-    const isFirst = this.getElemIndex(elem) === 0;
-    return isFirst && this.visibleTextIndex === 0;
-  }
-  isFinalElem(elem) {
-    return this.isFirstTextGone(elem) || this.isLastTextGone(elem);
   }
 }
