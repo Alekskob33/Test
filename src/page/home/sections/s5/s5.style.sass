@@ -4,6 +4,7 @@
     font-size: 55px
     font-weight: 500
     line-height: 1em
+    color: var(--color-case-study, white)
 
 // Hover animation
 .hover-underline
@@ -40,11 +41,11 @@
   to
     bottom: calc(0em + 0.11em)
     height: 1px
-    background-color: white
+    background-color: currentColor
 
 @keyframes underline-back
   from
     bottom: calc(0em + 0.11em)
-    background-color: white
+    background-color: currentColor
   to
     bottom: 0
