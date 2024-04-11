@@ -23,7 +23,7 @@
 .hover-underline
   position: relative
   display: inline-block
-  padding-bottom: 0.3em
+  padding-bottom: 16.5 // 0.3em
   cursor: pointer
   user-select: none
 
@@ -48,17 +48,17 @@
     height: 1px
     bottom: 0
   50%
-    height: 0.11em
+    height: 6px // 0.11em
     bottom: 0
     background-color: #afafaf
   to
-    bottom: calc(0em + 0.11em)
+    bottom: calc(0em + 6px)
     height: 1px
     background-color: currentColor
 
 @keyframes underline-back
   from
-    bottom: calc(0em + 0.11em)
+    bottom: calc(0em + 6px)
     background-color: currentColor
   to
     bottom: 0
