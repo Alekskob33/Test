@@ -1,12 +1,16 @@
 import { updatePosition } from '../../../../libs/element-position.js';
+import { fadeIn, fadeOut } from '../../../../libs/fade-animation.js';
 import { watchCursorInArea } from '../../../../libs/watch-cursor.js';
 
 const video = document.querySelector('#s5-video');
-video.hidden = true;
 const titleContainer = document.querySelector('.s5 .title');
+
+fadeOut(video, '0ms'); // init
 
 watchCursorInArea(titleContainer, {
   onMove: ({ x, y }) => {
+    fadeIn(video, '100ms ease');
+
     const elemHeight = video.offsetHeight;
     const customIndent = 5;
 
@@ -14,10 +18,9 @@ watchCursorInArea(titleContainer, {
     x = x + customIndent;
     y = y - elemHeight - customIndent;
 
-    video.hidden = false;
     updatePosition(video, { x, y });
   },
   onOut: () => {
-    video.hidden = true;
+    fadeOut(video, '100ms ease');
   },
 });
