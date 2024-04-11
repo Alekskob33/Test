@@ -1,9 +1,8 @@
-import FadeAnimation from '../../../../../libs/fadeAnimation/fadeAnimation.js';
+import { fadeIn, fadeOut } from '../../../../../libs/fade-animation.js';
 
 export default class PreviewAnimator {
   constructor(container) {
     this.previewContainer = container;
-    this.fadeEffect = new FadeAnimation();
   }
 
   insertImages(images) {
@@ -37,7 +36,7 @@ export default class PreviewAnimator {
       timeout += interval;
 
       setTimeout(() => {
-        this.fadeEffect.fadeIn(img);
+        fadeIn(img);
       }, timeout);
     });
   }
@@ -45,7 +44,7 @@ export default class PreviewAnimator {
   hideAllImages() {
     const images = this.previewContainer.querySelectorAll('img');
     for (let img of images) {
-      this.fadeEffect.fadeOut(img);
+      fadeOut(img);
     }
   }
 
