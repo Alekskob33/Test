@@ -1,27 +1,15 @@
+import { updatePosition } from '../../../../libs/element-position.js';
+import { watchCursorInArea } from '../../../../libs/watch-cursor.js';
+
 const video = document.querySelector('#s5-video');
+video.hidden = true;
 const titleContainer = document.querySelector('.s5 .title');
-
-function watchCursorInArea(container, { onMove, onOut }) {
-  if (!(container instanceof HTMLElement)) return;
-
-  container.onmouseover = ({ target }) => {
-    target.onmousemove = ({ offsetX: x, offsetY: y }) => {
-      onMove({ x, y });
-    };
-  };
-
-  container.onmouseout = onOut;
-}
-
-function updatePosition(elem, { x, y }) {
-  elem.style.setProperty('--x', `${x}px`);
-  elem.style.setProperty('--y', `${y}px`);
-}
 
 watchCursorInArea(titleContainer, {
   onMove: ({ x, y }) => {
     const elemHeight = video.offsetHeight;
     const customIndent = 5;
+
     // Manually shift to top-right direction
     x = x + customIndent;
     y = y - elemHeight - customIndent;
