@@ -1,11 +1,10 @@
-import { random } from './delay.js';
-import { fadeIn, fadeOut } from './fade-animation.js';
-import { observeElements } from './observer-elements.js';
-
+import { random } from '../../../../libs/delay.js';
+import { fadeIn, fadeOut } from '../../../../libs/fade-animation.js';
+import { observeElements } from '../../../../libs/observe-elements.js';
 const mediaElements = document.querySelectorAll(
   '.s4-images-box img, .s4-images-box video'
 );
-console.log('🚀 ~ mediaElements:', mediaElements);
+
 const options = {
   threshold: 0.5,
 };
