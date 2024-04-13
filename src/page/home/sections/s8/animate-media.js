@@ -6,11 +6,16 @@ const mediaElements = document.querySelectorAll(
   '.archive-item img, .archive-item video'
 );
 
-// Animate appearing img/video elements
+// Animate (fadeIn/fadeOut) img/video
 const observer = observeElements(mediaElements, {
   onAppear: (el) => {
     const randomDelay = random({ from: 100, to: 700 });
     fadeIn(el, `300ms ease-in ${randomDelay}ms`);
+
+    // When link visited (custom opacity)
+    if (el.closest('a')?.matches('.visited')) {
+      el.style.opacity = 0.2;
+    }
   },
   onDisappear: (el) => {
     fadeOut(el, '300ms ease-out');
