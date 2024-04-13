@@ -9,12 +9,11 @@ const mediaElements = document.querySelectorAll(
 // Mouseenter
 [...mediaElements].forEach((elem) => {
   elem.onmouseenter = () => {
-    hideAllMedia([...mediaElements]);
+    // Dim siblings
+    dimElements([...mediaElements]);
 
-    // Show current-elem only
-    elem.style.transition = 'all 300ms ease';
-    elem.style.transform = 'scale(1)';
-    elem.style.opacity = 1;
+    // Accent current-elem
+    highlightCurrentElem(elem);
   };
 });
 
@@ -22,11 +21,17 @@ const mediaElements = document.querySelectorAll(
 [...mediaElements].forEach((elem) => {
   elem.onmouseleave = () => {
     // Show all media
-    showAllMedia([...mediaElements]);
+    resetStyles([...mediaElements]);
   };
 });
 
-function showAllMedia(mediaElements) {
+function highlightCurrentElem(elem) {
+  elem.style.transition = 'all 300ms ease';
+  elem.style.transform = 'scale(1)';
+  elem.style.opacity = 1;
+}
+
+function resetStyles(mediaElements) {
   mediaElements.forEach((elem) => {
     elem.style.transition = 'all 300ms ease';
     elem.style.transform = 'scale(1)';
@@ -40,7 +45,7 @@ function showAllMedia(mediaElements) {
   });
 }
 
-function hideAllMedia(mediaElements) {
+function dimElements(mediaElements) {
   mediaElements.forEach((elem) => {
     // Dim all media-elements
     elem.style.transition = 'all 200ms ease';
