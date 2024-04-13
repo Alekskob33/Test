@@ -12,7 +12,9 @@ const mediaElements = document.querySelectorAll(
     hideAllMedia([...mediaElements]);
 
     // Show current-elem only
-    fadeIn(elem, '300ms ease');
+    elem.style.transition = 'all 300ms ease';
+    elem.style.transform = 'scale(1)';
+    elem.style.opacity = 1;
   };
 });
 
@@ -26,11 +28,14 @@ const mediaElements = document.querySelectorAll(
 
 function showAllMedia(mediaElements) {
   mediaElements.forEach((elem) => {
-    fadeIn(elem, '300ms ease-in');
+    elem.style.transition = 'all 300ms ease';
+    elem.style.transform = 'scale(1)';
 
     // Dim, if link 'visited'
     if (elem.closest('a').matches('.visited')) {
       elem.style.opacity = 0.2;
+    } else {
+      elem.style.opacity = 1;
     }
   });
 }
@@ -38,7 +43,8 @@ function showAllMedia(mediaElements) {
 function hideAllMedia(mediaElements) {
   mediaElements.forEach((elem) => {
     // Dim all media-elements
-    fadeOut(elem, '300ms ease-out');
+    elem.style.transition = 'all 200ms ease';
     elem.style.opacity = 0.2;
+    elem.style.transform = 'scale(0.8)';
   });
 }
