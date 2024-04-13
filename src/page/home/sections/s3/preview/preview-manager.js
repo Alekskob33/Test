@@ -19,8 +19,8 @@ export default class previewManager {
       onAppear: (el) => {
         this.textManager.updateCurrentIndex(el);
 
-        const images = el.querySelectorAll('img[data-target-square]');
-        this.updatePreview(images);
+        const mediaElem = el.querySelectorAll('[data-target-square]');
+        this.updatePreview(mediaElem);
       },
       onDisappear: (el) => {
         if (this.textManager.isFinalElem(el)) {
@@ -31,15 +31,15 @@ export default class previewManager {
     });
   }
 
-  updatePreview(images) {
+  updatePreview(mediaElements) {
     this.animator.showContainer();
-    this.animator.hideAllImages();
-    this.animator.showImages(images);
+    this.animator.hideAllMedia();
+    this.animator.showMedia(mediaElements);
   }
 
   breakPreview() {
     this.textManager.visibleElemIndex = null;
     this.animator.hideContainer();
-    this.animator.hideAllImages();
+    this.animator.hideAllMedia();
   }
 }

@@ -3,46 +3,47 @@ import { fadeIn, fadeOut } from '../../../../../libs/fade-animation.js';
 export const animationManager = {
   previewContainer: document.querySelector('.s3-fixed-container'),
 
-  insertImages(images) {
-    const clones = [...images].map((img) => img.cloneNode(true));
+  insertImages(mediaElem) {
+    const clones = [...mediaElem].map((elem) => elem.cloneNode(true));
 
-    for (let img of clones) {
-      const squareIndex = img.dataset.targetSquare - 1;
+    for (let elem of clones) {
+      const squareIndex = elem.dataset.targetSquare - 1;
       const targetSquare =
         this.previewContainer.firstElementChild.children[squareIndex];
-      targetSquare.replaceChildren(img);
+
+      targetSquare.replaceChildren(elem);
     }
 
     return clones;
   },
 
-  sortImages(images) {
-    return images.sort(
-      (img1, img2) => img1.dataset.targetSquare > img2.dataset.targetSquare
+  sortImages(mediaElements) {
+    return mediaElements.sort(
+      (elem1, elem2) => elem1.dataset.targetSquare > elem2.dataset.targetSquare
     );
   },
 
-  showImages(images) {
+  showMedia(images) {
     const clones = this.insertImages(images);
-    const sortedImages = this.sortImages(clones);
+    const sortedClones = this.sortImages(clones);
 
     let timeout = 0;
     const interval = 500; // ms
 
     // Appear one-by-one (with interval)
-    sortedImages.forEach((img) => {
+    sortedClones.forEach((mediaElem) => {
       timeout += interval;
 
       setTimeout(() => {
-        fadeIn(img);
+        fadeIn(mediaElem);
       }, timeout);
     });
   },
 
-  hideAllImages() {
-    const images = this.previewContainer.querySelectorAll('img');
-    for (let img of images) {
-      fadeOut(img);
+  hideAllMedia() {
+    const mediaElements = this.previewContainer.querySelectorAll('img, video');
+    for (let elem of mediaElements) {
+      fadeOut(elem);
     }
   },
 
