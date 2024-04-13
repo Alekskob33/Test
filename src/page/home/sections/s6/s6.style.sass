@@ -1,4 +1,6 @@
-// .s6
+.s6
+  position: relative
+  margin-top: 233px
 
 .social-nav
   display: flex
@@ -15,3 +17,44 @@
     position: relative
     top: -2px
     padding-bottom: 6px
+
+.s6-button-container
+  position: absolute
+  right: 0
+  top: 0
+  .arrow
+    display: block
+    position: absolute
+    left: calc(50% - 8px)
+    top: calc(50% - 7px)
+    width: 0
+    height: 0
+    border-top: 14px solid var(--bg-cursor)
+    border-left: 9px solid transparent
+    border-right: 9px solid transparent
+
+    font-size: 0
+    line-height: 0
+    user-select: none
+    color: transparent
+
+    pointer-events: none
+
+.animated-button
+  display: flex
+  width: 65.45px
+  height: 40px
+  overflow: hidden
+
+  cursor: pointer
+  transition: transform 200ms
+  &:hover
+    opacity: 0.6
+    transform: scale(0.9)
+  img
+    flex: none
+    width: 100%
+    height: 100%
+    object-fit: contain
+    &.active
+      order: -1
