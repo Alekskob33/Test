@@ -8,6 +8,7 @@ import './page/home/sections/s4/s4-index.js';
 import './page/home/sections/s5/s5-index.js';
 import './page/home/sections/s6/s6-index.js';
 import './page/home/sections/s7/s7-index.js';
+import './page/home/sections/s8/s8-index.js';
 
 // Global
 import './page/global/auto-fade-text.js';

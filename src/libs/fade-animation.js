@@ -1,4 +1,4 @@
-export function fadeIn(elem, optionsString = '300ms 0ms ease-in') {
+export function fadeIn(elem, optionsString = '300ms ease-in 0ms') {
   elem.style.opacity = 0; // init
   elem.offsetHeight; // restart animation
 
