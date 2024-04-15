@@ -9,6 +9,14 @@
   margin-left: auto
   margin-right: auto
 
+%tune-media,
+[style*='max-w']
+  width: 100%
+  object-fit: scale-down
+
+  max-height: 100%
+  max-width: calc(var(--max-w, 100%))
+
 // Square grid
 %square-grid
   display: grid
@@ -22,9 +30,5 @@
   padding: 15%
 
   img, video
-    width: 100%
-    object-fit: scale-down
-
-    max-height: 100%
-    max-width: calc(var(--max-w, 100%))
+    @extend %tune-media
     opacity: 0

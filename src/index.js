@@ -13,6 +13,7 @@ import './page/home/sections/s8/s8-index.js';
 /* Case Study */
 import './page/second-page/sections/ps1/ps1-index.js';
 import './page/second-page/sections/ps2/ps2-index.js';
+import './page/second-page/sections/ps3/ps3-index.js';
 
 // Global
 import './page/global/auto-fade-text.js';

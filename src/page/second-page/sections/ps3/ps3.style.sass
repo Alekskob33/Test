@@ -1,0 +1,20 @@
+@import ../../../../grid
+@import ../../../../mixins
+
+.entry
+  +margin(margin-bottom, 120px)
+
+  p
+    @extend .narrow
+    +margin(margin-bottom, 60px)
+
+    +font-size(20px, 16px)
+    line-height: 1.3em
+    color: var(--color-dimmed)
+
+.entry-title
+  @extend .narrow
+  +margin(margin-bottom, 60px)
+
+  +font-size(100px, 40px)
+  line-height: 1em
