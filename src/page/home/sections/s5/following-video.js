@@ -9,13 +9,13 @@ fadeOut(video, '0ms'); // init
 
 watchCursorInArea(titleContainer, {
   onMove: ({ x, y }) => {
-    fadeIn(video, '100ms ease');
+    fadeIn(video, '300ms ease');
 
     const elemHeight = video.offsetHeight;
-    const customIndent = 5;
+    const customIndent = 10;
 
     // Manually shift to top-right direction
-    x = x + customIndent;
+    x = x - customIndent;
     y = y - elemHeight - customIndent;
 
     updatePosition(video, { x, y });

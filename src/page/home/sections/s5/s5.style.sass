@@ -5,7 +5,10 @@
     font-size: 55px
     font-weight: 500
     line-height: 1em
+    text-decoration: none
     color: var(--color-case-study, white)
+    &:active
+      color: #3BFB2A
 
 .s5-video-wraper
   position: relative
@@ -15,9 +18,9 @@
   left: 0
   top: 0
 
-  max-width: 71px
-  max-height: 120px
+  max-width: 200px
   transform: translate(var(--x, 0px), var(--y, 0px))
+  pointer-events: none
 
 // Hover animation
 .hover-underline
