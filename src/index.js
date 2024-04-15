@@ -14,6 +14,7 @@ import './page/home/sections/s8/s8-index.js';
 import './page/second-page/sections/header/ps1-index.js';
 import './page/second-page/sections/brief/ps2-index.js';
 import './page/second-page/sections/article/ps3-index.js';
+import './page/second-page/sections/footer/footer.js';
 
 // Global
 import './page/global/auto-fade-text.js';
