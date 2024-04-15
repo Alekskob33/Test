@@ -72,6 +72,12 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         title: 'Max Pirogov',
         template: 'src/page/home/index.html',
+        filename: 'index.html',
+      }),
+      new HtmlWebpackPlugin({
+        title: 'Case Study',
+        template: 'src/page/second-page/case-study.html',
+        filename: 'case-study.html',
       }),
       new MiniCssExtractPlugin({
         filename: './[name].css',

@@ -5,7 +5,7 @@ import { watchCursorInArea } from '../../../../libs/watch-cursor.js';
 const video = document.querySelector('#s5-video');
 const titleContainer = document.querySelector('.s5 .title');
 
-fadeOut(video, '0ms'); // init
+if (video) fadeOut(video, '0ms'); // init
 
 watchCursorInArea(titleContainer, {
   onMove: ({ x, y }) => {

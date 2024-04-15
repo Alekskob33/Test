@@ -1,7 +1,7 @@
 export function observeElements(elements, { onAppear, onDisappear, options }) {
   if (!elements.length) elements = [elements];
   if (![...elements].every((elem) => elem instanceof HTMLElement)) {
-    console.log('Elements are not valid');
+    return console.log('No elements to observe');
   }
 
   // Init observer

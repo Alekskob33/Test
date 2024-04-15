@@ -9,6 +9,8 @@ export const imgSlider = {
   state: 'paused',
 
   initSlider(container) {
+    if (!(container instanceof HTMLElement)) return;
+
     this.container = container;
     this.slides = [...this.container.children] || [];
     this.currentSlide = container.querySelector('.active') || this.slides[0];

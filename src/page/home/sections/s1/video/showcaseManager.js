@@ -9,9 +9,9 @@ export default class ShowcaseManager {
     this.playButton = document.querySelector('.play-button');
 
     this.animator = new VideoAnimator();
-    this.smallPlayerContainer = this.smallPlayer.closest('div');
 
     if (this.isValidInput) {
+      this.smallPlayerContainer = this.smallPlayer.closest('div');
       this.subscribeToClick();
     }
   }

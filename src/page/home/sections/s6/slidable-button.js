@@ -2,7 +2,7 @@ import { imgSlider } from './slider.js';
 
 const slider = imgSlider.initSlider(document.querySelector('.animated-button'));
 
-if (slider.canRun) {
+if (slider?.canRun) {
   slider.run(); // init
 
   slider.container.onmouseenter = slider.pause.bind(slider);
