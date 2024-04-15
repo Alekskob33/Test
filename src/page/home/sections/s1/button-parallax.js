@@ -26,11 +26,22 @@ const playButtonParallax = {
   watchCursor() {
     if (!this.rootElem || !this.button) return;
 
-    this.rootElem.onmouseover = ({ target }) => {
+    // On mouse enter:
+    this.rootElem.onmouseenter = ({ target }) => {
+      // show btn-arrow
+      this.button.style.opacity = 1;
+
+      // On mouse move:
       target.onmousemove = ({ offsetX: x, offsetY: y }) => {
         if (this.button.matches('.paused')) return;
         this.updatePosition({ x, y });
       };
+    };
+
+    // On leave container: hide btn-arrow
+    this.rootElem.onmouseleave = () => {
+      if (this.button.matches('.playing')) return;
+      this.button.style.opacity = 0;
     };
   },
 };

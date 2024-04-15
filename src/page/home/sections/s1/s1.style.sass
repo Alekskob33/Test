@@ -30,8 +30,10 @@
 #small-video
   display: block
   width: 200px
-  opacity: 0.4
   cursor: pointer
+  transition: opacity 200ms
+  &:hover
+    opacity: 0.4
 
 .parallax-button
   transform: translateX(var(--x)) translateY(var(--y))
@@ -52,7 +54,10 @@
   color: transparent
 
   cursor: pointer
-  transition: top 300ms ease-in, border 300ms linear, transform 200ms linear
+  transition: top 300ms ease-in, border 300ms linear, transform 200ms linear, opacity 300ms
   &.playing
     border: 14px solid var(--bg-cursor)
     top: calc(10% - 14px)
+  &:not(.playing)
+    pointer-events: none
+    opacity: 0
