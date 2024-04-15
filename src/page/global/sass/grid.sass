@@ -1,3 +1,5 @@
+@import media
+
 .center-content
   display: flex
   justify-content: center
@@ -8,14 +10,6 @@
   max-width: 700px
   margin-left: auto
   margin-right: auto
-
-%tune-media,
-[style*='max-w']
-  width: 100%
-  object-fit: scale-down
-
-  max-height: 100%
-  max-width: calc(var(--max-w, 100%))
 
 // Square grid
 %square-grid
@@ -28,7 +22,3 @@
   @extend .center-content
   aspect-ratio: 1 / 1
   padding: 15%
-
-  img, video
-    @extend %tune-media
-    opacity: 0

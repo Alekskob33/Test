@@ -1,5 +1,5 @@
-@import ../../../../grid
-@import ../../../../mixins
+@import ../../../global/sass/grid
+@import ../../../global/sass/mixins
 
 .s3
   position: relative
@@ -53,5 +53,6 @@
 .grid-item
   @extend %grid-item
   padding: 15%
-  img
+  img, video
+    @extend %tune-media
     opacity: 0

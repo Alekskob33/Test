@@ -1,5 +1,5 @@
-@import ../../../../grid
-@import ../../../../mixins
+@import ../../../global/sass/grid
+@import ../../../global/sass/mixins
 
 .s4
   +margin(margin-bottom, 123px)
@@ -21,4 +21,5 @@
     width: 100%
     padding: 15%
   img, video
+    @extend %tune-media
     opacity: 1

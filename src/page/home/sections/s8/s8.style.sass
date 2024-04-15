@@ -1,5 +1,5 @@
-@import ../../../../grid
-@import ../../../../mixins
+@import ../../../global/sass/grid
+@import ../../../global/sass/mixins
 
 .s8
   a
@@ -16,7 +16,9 @@
   padding: 30%
   overflow: hidden
   img, video
+    @extend %tune-media
     cursor: pointer
+    opacity: 0
 
   span
     position: absolute
