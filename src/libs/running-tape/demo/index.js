@@ -1,5 +1,4 @@
 console.log('works');
-import '../js/tape.js';
 import Tape from '../js/tape.js';
 
 const tape = new Tape({

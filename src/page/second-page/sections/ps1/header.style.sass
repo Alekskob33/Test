@@ -1,0 +1,19 @@
+.ps1
+  position: relative
+  height: 100%
+
+  video
+    max-width: 200px
+
+.ps1-running-tape
+  position: absolute
+  left: 0
+  top: 0
+  width: calc(100% + 40px)
+  margin-left: -20px
+  margin-right: -20px
+
+  letter-spacing: 0.15em
+
+  [data-splitter]::before
+    content: "\00a0" attr(data-splitter) "\00a0"
