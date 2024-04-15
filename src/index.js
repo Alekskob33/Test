@@ -11,9 +11,9 @@ import './page/home/sections/s7/s7-index.js';
 import './page/home/sections/s8/s8-index.js';
 
 /* Case Study */
-import './page/second-page/sections/ps1/ps1-index.js';
-import './page/second-page/sections/ps2/ps2-index.js';
-import './page/second-page/sections/ps3/ps3-index.js';
+import './page/second-page/sections/header/ps1-index.js';
+import './page/second-page/sections/brief/ps2-index.js';
+import './page/second-page/sections/article/ps3-index.js';
 
 // Global
 import './page/global/auto-fade-text.js';
