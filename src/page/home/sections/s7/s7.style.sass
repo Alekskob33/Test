@@ -1,11 +1,13 @@
+@import ../../../../mixins
+
 .s7
   margin-left: -20px
   margin-right: -20px
-  margin-bottom: 45px
+  +margin(margin-bottom, 45px)
   color: var(--color-header-tape)
 
 .archive-tape
-  font-size: 150px
+  +font-size(150px, 50px)
   font-weight: 500
   user-select: none
   *

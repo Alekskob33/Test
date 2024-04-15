@@ -1,8 +1,9 @@
 @import ../../../../grid
+@import ../../../../mixins
 
 .s3
   position: relative
-  margin-bottom: 240px
+  +margin(margin-bottom, 240px)
 
 // Text boxes
 .s3-text-box
@@ -14,8 +15,7 @@
 .s3-paragraph
   max-width: 1000px
 
-  font-family: "Montserrat", sans-serif
-  font-size: 55px
+  +font-size(55px, 25px)
   line-height: 1.3em
   img
     display: inline-block

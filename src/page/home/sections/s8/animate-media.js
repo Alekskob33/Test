@@ -14,7 +14,7 @@ const observer = observeElements(mediaElements, {
 
     // When link visited (custom opacity)
     if (el.closest('a')?.matches('.visited')) {
-      el.style.opacity = 0.2;
+      el.style.opacity = 0.8;
     }
   },
   onDisappear: (el) => {

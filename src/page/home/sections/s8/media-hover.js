@@ -27,7 +27,7 @@ const mediaElements = document.querySelectorAll(
 
 function highlightCurrentElem(elem) {
   elem.style.transition = 'all 300ms ease';
-  elem.style.transform = 'scale(1)';
+  elem.style.transform = 'scale(1.2)';
   elem.style.opacity = 1;
 }
 
@@ -49,7 +49,7 @@ function dimElements(mediaElements) {
   mediaElements.forEach((elem) => {
     // Dim all media-elements
     elem.style.transition = 'all 200ms ease';
-    elem.style.opacity = 0.2;
+    elem.style.opacity = 0.8;
     elem.style.transform = 'scale(0.8)';
   });
 }

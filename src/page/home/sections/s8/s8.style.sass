@@ -1,4 +1,5 @@
 @import ../../../../grid
+@import ../../../../mixins
 
 .s8
   a
@@ -19,13 +20,14 @@
 
   span
     position: absolute
+    z-index: 1
     left: 50%
     top: 50%
     transform: translate(-50%, -50%)
     width: 100%
 
     text-align: center
-    font-size: 150px
+    +font-size(150px, 50px)
     font-weight: 500
     line-height: 1.1em
 

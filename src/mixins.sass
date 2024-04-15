@@ -1,0 +1,18 @@
+@mixin mobile
+  @media screen and (max-width: 1024px)
+    @content
+
+@mixin adaptive($prop, $value, $value-mobile)
+  #{$prop}: $value
+  +mobile
+    #{$prop}: $value-mobile
+
+@mixin margin($prop, $value)
+  #{$prop}: $value
+  +mobile
+    #{$prop}: calc($value / 2)
+
+@mixin font-size($value, $value-mobile)
+  font-size: $value
+  +mobile
+    font-size: $value-mobile

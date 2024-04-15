@@ -1,13 +1,16 @@
+@import  ../../../../mixins
+
 .s2
   margin-left: -20px
   margin-right: -20px
-  margin-bottom: 105px
+  +margin(margin-bottom, 105px)
+
   color: var(--color-header-tape)
 
 .header-tape
   margin-top: -0.62em
 
-  font-size: 150px
+  +font-size(150px, 50px)
   font-weight: 500
   user-select: none
   *
