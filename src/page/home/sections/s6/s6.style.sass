@@ -24,7 +24,6 @@
   right: 0
   top: 0
   .arrow
-    display: none
     position: absolute
     left: calc(50% - 8px)
     top: calc(50% - 7px)
@@ -40,8 +39,10 @@
     color: transparent
 
     pointer-events: none
+    opacity: 0
+    transition: opacity 300ms
   &:hover .arrow
-    display: block
+    opacity: 1
 
 .animated-button
   display: flex
