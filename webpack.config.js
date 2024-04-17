@@ -79,11 +79,13 @@ module.exports = (env, argv) => {
         title: 'Max Pirogov',
         template: 'src/page/home/index.html',
         filename: 'index.html',
+        minify: false,
       }),
       new HtmlWebpackPlugin({
         title: 'Case Study',
         template: 'src/page/second-page/case-study.html',
         filename: 'case-study.html',
+        minify: false,
       }),
       new MiniCssExtractPlugin({
         filename: './[name].css',
