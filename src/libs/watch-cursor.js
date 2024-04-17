@@ -1,7 +1,8 @@
-export function watchCursorInArea(container, { onMove, onOut }) {
+export function watchCursorInArea(container, { onMove, onEnter, onOut }) {
   if (!(container instanceof HTMLElement)) return;
 
   container.onmouseover = ({ target }) => {
+    onEnter();
     target.onmousemove = ({ offsetX: x, offsetY: y }) => {
       onMove({ x, y });
     };
