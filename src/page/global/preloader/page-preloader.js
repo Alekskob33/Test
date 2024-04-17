@@ -1,0 +1,44 @@
+import { AwaitLoading } from '../../../libs/awaitLoadingMedia/AwaitLoading.js';
+import { AwaitLoadingWithFixedTime } from '../../../libs/awaitLoadingMedia/AwaitLoadingWithFixedTime.js';
+import { fadeIn, fadeOut } from '../../../libs/fade-animation.js';
+import { ImgSlider } from '../../../libs/img-slider/slider.js';
+import { videoAwaiter } from './awaitMedia.js';
+import './preloader.style.sass';
+
+// Preloader node
+const preloaderContainer = document.querySelector('#preloader');
+const preloaderSlider = new ImgSlider({ interval: 150 }).initSlider(
+  document.querySelector('.preloader-slider')
+);
+// Elements to await
+const mediaContainer = document.querySelector('.js-await-media');
+const awaitedMedia = document.querySelectorAll('.js-await-media video');
+const runningTape = document.querySelector('.s2');
+
+(() => {
+  if (!preloaderContainer) return;
+  // Await video loading
+  videoAwaiter.awaitLoading(awaitedMedia, {
+    onProgress: () => {
+      fadeIn(preloaderSlider.container, '700ms');
+      preloaderSlider.run();
+    },
+    onComplete: () => {
+      preloaderSlider.stop();
+      preloaderContainer.remove();
+
+      fadeIn(mediaContainer, '2500ms');
+      if (runningTape) {
+        runningTape.style.transform = 'translateY(50%)';
+        runningTape.offsetHeight;
+        runningTape.style.transition = 'transform 1500ms';
+        runningTape.style.transform = 'translateY(0)';
+      }
+    },
+  });
+})();
+
+// new AwaitLoading(awaitedMedia, () => {
+//   preloaderContainer.remove();
+//   preloaderSlider.stop();
+// });

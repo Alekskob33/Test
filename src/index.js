@@ -1,5 +1,8 @@
 import './style.sass';
 
+/* Preloader */
+import './page/global/preloader/page-preloader.js';
+
 /* Home */
 import './page/home/sections/s1/module.js';
 import './page/home/sections/s2/s2-index.js';
