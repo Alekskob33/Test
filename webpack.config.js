@@ -89,7 +89,9 @@ module.exports = (env, argv) => {
         filename: './[name].css',
       }),
       new CopyPlugin({
-        patterns: [{ from: 'src/page/global/favicons', to: 'assets/favicons' }],
+        patterns: [
+          { from: 'src/page/global/assets/favicons', to: 'assets/favicons' },
+        ],
       }),
     ],
   };
