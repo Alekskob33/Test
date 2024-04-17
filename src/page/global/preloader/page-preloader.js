@@ -1,5 +1,3 @@
-import { AwaitLoading } from '../../../libs/awaitLoadingMedia/AwaitLoading.js';
-import { AwaitLoadingWithFixedTime } from '../../../libs/awaitLoadingMedia/AwaitLoadingWithFixedTime.js';
 import { fadeIn, fadeOut } from '../../../libs/fade-animation.js';
 import { ImgSlider } from '../../../libs/img-slider/slider.js';
 import { videoAwaiter } from './awaitMedia.js';
