@@ -12,7 +12,7 @@ export default class ShowcaseManager {
 
     if (this.isValidInput) {
       this.smallPlayerContainer = this.smallPlayer.closest('div');
-      this.subscribeToClick();
+      this.#subscribeToClick();
     }
   }
 
@@ -20,34 +20,46 @@ export default class ShowcaseManager {
     return this.mainPlayer && this.smallPlayer && this.playButton;
   }
 
-  subscribeToClick() {
+  #subscribeToClick() {
     if (this.playButton) {
-      this.playButton.onclick = this.handleButtonClick.bind(this);
+      this.playButton.onclick = this.#handleButtonClick.bind(this);
     }
     if (this.smallPlayer) {
-      this.smallPlayer.onclick = this.handleSmallVideoClick.bind(this);
+      this.smallPlayer.onclick = this.#handleSmallVideoClick.bind(this);
     }
   }
 
-  handleButtonClick() {
+  #handleButtonClick() {
     if (this.state === 'paused') {
-      this.state = 'playing';
-      this.showMainVideo();
-      this.playButton.classList.add('playing');
+      this.activatePlayState();
     } else {
-      this.state = 'paused';
-      this.hideMainVideo();
-      this.playButton.classList.remove('playing');
+      this.activateDefaultState();
     }
   }
 
-  handleSmallVideoClick() {
+  #handleSmallVideoClick() {
     if (this.state === 'paused') {
-      this.handleButtonClick();
+      this.#handleButtonClick();
     }
   }
 
-  showMainVideo() {
+  activatePlayState() {
+    if (this.state === 'playing') return;
+
+    this.state = 'playing';
+    this.#showMainVideo();
+    this.playButton.classList.add('playing');
+  }
+
+  activateDefaultState() {
+    if (this.state === 'paused') return;
+
+    this.state = 'paused';
+    this.#hideMainVideo();
+    this.playButton.classList.remove('playing');
+  }
+
+  #showMainVideo() {
     this.animator.rollUp(this.smallPlayerContainer);
 
     this.animator.fadeIn(this.mainPlayer);
@@ -59,7 +71,7 @@ export default class ShowcaseManager {
     });
   }
 
-  hideMainVideo() {
+  #hideMainVideo() {
     this.animator.fadeOut(this.mainPlayer);
     this.animator.fadeIn(this.smallPlayerContainer);
     this.smallPlayer.play();

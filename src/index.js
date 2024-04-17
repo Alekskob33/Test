@@ -19,5 +19,6 @@ import './page/second-page/sections/brief/ps2-index.js';
 import './page/second-page/sections/article/ps3-index.js';
 import './page/second-page/sections/footer/footer.js';
 
-// Global
+/* Global */
 import './page/global/auto-fade-text.js';
+import './page/global/auto-stop-videos.js';

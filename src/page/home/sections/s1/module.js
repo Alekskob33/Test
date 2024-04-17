@@ -4,4 +4,4 @@ import ShowcaseManager from './video/showcaseManager.js';
 import './button-parallax.js';
 import './auto-scroll.js';
 
-new ShowcaseManager();
+export const showcaseManager = new ShowcaseManager();

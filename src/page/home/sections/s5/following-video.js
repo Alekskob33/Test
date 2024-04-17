@@ -10,6 +10,7 @@ if (video) fadeOut(video, '0ms'); // init
 watchCursorInArea(titleContainer, {
   onEnter: () => {
     fadeIn(video, '500ms ease');
+    video.play();
   },
   onMove: ({ x, y }) => {
     const elemHeight = video.offsetHeight;
@@ -23,5 +24,6 @@ watchCursorInArea(titleContainer, {
   },
   onOut: () => {
     fadeOut(video, '100ms ease');
+    video.pause();
   },
 });
