@@ -5,7 +5,7 @@ import { textElements } from './text-elements.js';
 export default class previewManager {
   constructor() {
     this.textManager = textElements;
-    this.animator = animationManager;
+    this.animator = animationManager.init();
 
     if (this.animator.previewContainer) {
       this.observe();

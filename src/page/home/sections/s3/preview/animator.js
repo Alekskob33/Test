@@ -1,7 +1,10 @@
 import { fadeIn, fadeOut } from '../../../../../libs/fade-animation.js';
 
 export const animationManager = {
-  previewContainer: document.querySelector('.s3-fixed-container'),
+  init() {
+    this.previewContainer = document.querySelector('.s3-fixed-container');
+    return this;
+  },
 
   insertImages(mediaElem) {
     const clones = [...mediaElem].map((elem) => elem.cloneNode(true));
