@@ -8,9 +8,10 @@ const titleContainer = document.querySelector('.s5 .title');
 if (video) fadeOut(video, '0ms'); // init
 
 watchCursorInArea(titleContainer, {
+  onEnter: () => {
+    fadeIn(video, '500ms ease');
+  },
   onMove: ({ x, y }) => {
-    fadeIn(video, '300ms ease');
-
     const elemHeight = video.offsetHeight;
     const customIndent = 10;
 
