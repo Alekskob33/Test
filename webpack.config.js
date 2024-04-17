@@ -88,9 +88,9 @@ module.exports = (env, argv) => {
       new MiniCssExtractPlugin({
         filename: './[name].css',
       }),
-      // new CopyPlugin({
-      //   patterns: [{ from: './src/assets', to: 'dist/assets' }],
-      // }),
+      new CopyPlugin({
+        patterns: [{ from: 'src/page/global/favicons', to: 'assets/favicons' }],
+      }),
     ],
   };
 };
