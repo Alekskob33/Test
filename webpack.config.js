@@ -59,12 +59,18 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(png|jpeg|jpg|svg|gif)$/i,
+          test: /\.(png|jpeg|jpg|svg|gif|ico|webmanifest|xml)$/i,
           type: 'asset/resource',
+          generator: {
+            filename: defineDistFolder,
+          },
         },
         {
-          test: /\.(mp3, mp4, webm, ogg, avi, flv)$/i,
+          test: /\.(mp3|mp4|webm|ogg|avi|flv)$/i,
           type: 'asset/resource',
+          generator: {
+            filename: defineDistFolder,
+          },
         },
       ],
     },
@@ -88,3 +94,17 @@ module.exports = (env, argv) => {
     ],
   };
 };
+
+function defineDistFolder(data) {
+  const modulePath = data.module.resourceResolveData.relativePath;
+  const isFavicon = modulePath.includes('favicons');
+  const isHomePage = modulePath.includes('home');
+  const isCasePage = modulePath.includes('second-page');
+  const isPreloader = modulePath.includes('preloader');
+
+  if (isFavicon) return './assets/favicons/[name][ext][query]';
+  if (isHomePage) return './assets/home/[name][ext][query]';
+  if (isCasePage) return './assets/case/[name][ext][query]';
+  if (isPreloader) return './assets/preloader/[name][ext][query]';
+  return './assets/[name][ext][query]';
+}
