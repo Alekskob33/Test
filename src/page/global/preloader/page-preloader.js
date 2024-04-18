@@ -1,5 +1,6 @@
 import { fadeIn, fadeOut } from '../../../libs/fade-animation.js';
 import { ImgSlider } from '../../../libs/img-slider/slider.js';
+import { tapeS2 } from '../../home/sections/s2/s2-index.js';
 import { videoAwaiter } from './awaitMedia.js';
 import './preloader.style.sass';
 
@@ -23,10 +24,11 @@ const runningTape = document.querySelector('.s2');
     },
     onComplete: () => {
       preloaderSlider.stop();
-      fadeOut(preloaderContainer, '1500ms');
+      fadeOut(preloaderContainer, '1000ms');
 
       setTimeout(() => {
         preloaderContainer.remove();
+        tapeS2.start();
       }, 1000);
 
       if (runningTape) {
