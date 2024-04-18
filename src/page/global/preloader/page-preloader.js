@@ -18,7 +18,7 @@ const runningTape = document.querySelector('.s2');
   // Await video loading
   videoAwaiter.awaitLoading(awaitedMedia, {
     onProgress: () => {
-      fadeIn(preloaderSlider.container, '700ms');
+      fadeIn(preloaderSlider.container, '300ms');
       preloaderSlider.run();
     },
     onComplete: () => {
