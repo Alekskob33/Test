@@ -25,14 +25,18 @@ const runningTape = document.querySelector('.s2');
       preloaderSlider.stop();
 
       fadeOut(preloaderContainer, '1500ms');
+
       setTimeout(() => {
         preloaderContainer.remove();
       }, 1500);
 
       if (runningTape) {
+        const tapeHeight = runningTape.offsetHeight;
+        runningTape.style.marginTop = `${tapeHeight / -1.6}px`;
         runningTape.style.transform = 'translateY(50%)';
+
         runningTape.offsetHeight;
-        runningTape.style.transition = 'transform 1500ms';
+        runningTape.style.transition = 'transform 1000ms';
         runningTape.style.transform = 'translateY(0)';
       }
     },
