@@ -9,8 +9,12 @@
 .archive-tape
   +font-size(150px, 50px)
   font-weight: 500
+  line-height: 1.1em
   user-select: none
+  +mobile
+    padding-top: 18px
   *
     font-style: normal
+
   [data-splitter]::before
     content: "\00a0" attr(data-splitter) "\00a0"

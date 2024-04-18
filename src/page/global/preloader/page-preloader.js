@@ -23,12 +23,11 @@ const runningTape = document.querySelector('.s2');
     },
     onComplete: () => {
       preloaderSlider.stop();
-
       fadeOut(preloaderContainer, '1500ms');
 
       setTimeout(() => {
         preloaderContainer.remove();
-      }, 1500);
+      }, 1000);
 
       if (runningTape) {
         const tapeHeight = runningTape.offsetHeight;
