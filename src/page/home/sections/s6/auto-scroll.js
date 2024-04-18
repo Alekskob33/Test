@@ -4,16 +4,17 @@ const btn = document.querySelector('.js-scroll-down');
 
 function autoScrollDown() {
   const targetElem = document.querySelector('.archive-tape');
-  // const prevSection = targetElem.closest('section').previousElementSibling;
+  const tapeHeight = targetElem.offsetHeight;
+  const stepScroll = tapeHeight / 1.7;
 
-  // const prevElemBottomY = prevSection.getBoundingClientRect().bottom;
-  // const targetElemTopY = targetElem.getBoundingClientRect().top;
-  // const margin = targetElemTopY - prevElemBottomY;
-  const elemHeight = targetElem.offsetHeight;
-
-  // const stepScroll = elemHeight / 2 + margin;
-  const stepScroll = elemHeight / 2;
-  window.scrollBy({ top: stepScroll, behavior: 'smooth' });
+  // Workaround for 'ease'-like scroll behavior
+  document.body.style.transition = 'transform 500ms';
+  document.body.style.transform = `translateY(${-stepScroll}px)`;
+  setTimeout(() => {
+    document.body.style.transition = 'none';
+    document.body.style.transform = `translateY(0px)`;
+    window.scrollBy(0, stepScroll);
+  }, 500);
 }
 
 (() => {
