@@ -1,25 +1,25 @@
 export const videoAwaiter = {
   duration: null,
-  maxDelay: 2500, // ms
+  maxDelay: 2000, // ms
   timerId: null,
 
   awaitLoading(videoElements, { onProgress, onComplete }) {
     if (videoElements.length < 1) return onComplete();
 
+    // Polling if video is ready
     this.timerId = setInterval(() => {
-      if (this.duration > 500) {
+      this.duration += 100;
+
+      if (this.duration > 100) {
         onProgress();
       }
-
       if (this.isCompleted(videoElements)) {
-        if (this.duration <= 500 || this.duration >= this.maxDelay) {
+        if (this.duration <= 100 || this.duration >= this.maxDelay) {
           this.breakTimer();
           onComplete();
           return;
         }
       }
-
-      this.duration += 100;
     }, 100);
   },
 
@@ -28,7 +28,7 @@ export const videoAwaiter = {
   },
 
   isReady(video) {
-    return video.readyState >= 2;
+    return video.readyState >= 4;
   },
 
   isCompleted(videoElements) {
