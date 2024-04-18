@@ -10,6 +10,8 @@
   position: relative
   @extend %square-grid
   grid-template-columns: repeat(4, 1fr)
+  +mobile
+    grid-template-columns: repeat(2, 1fr)
 
 .archive-item
   @extend %grid-item
