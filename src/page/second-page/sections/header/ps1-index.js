@@ -10,5 +10,5 @@ if (tapeElem) {
     speed: 1.3,
   });
 
-  // headerTape.start();
+  headerTape.start();
 }
