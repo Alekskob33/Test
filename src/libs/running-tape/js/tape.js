@@ -1,6 +1,7 @@
 import DOMmanager from './modules/dom-manager.js';
 import Animator from './modules/animator.js';
 import Observer from './modules/observer.js';
+import debounce from '../../debounce.js';
 
 const { log } = console;
 
@@ -33,6 +34,25 @@ export default class Tape {
     this.#observe();
 
     this.#options = { cssGap };
+
+    // Handle resize (re-calculate and re-populate)
+    window.addEventListener(
+      'resize',
+      debounce(this.handleResize.bind(this), { ms: 100 })
+    );
+  }
+
+  handleResize() {
+    this.#unobserve();
+    this.#animator.stop();
+
+    this.#domManager.init();
+    this.#domManager.fitScreen();
+
+    this.#observe();
+    setTimeout(() => {
+      this.#animator.start();
+    }, 500);
   }
 
   start() {
@@ -67,5 +87,10 @@ export default class Tape {
   #observe() {
     const middleGroup = this.#domManager.groupsContainer.children[1]; // 2nd from 3
     this.#observer.observe(middleGroup);
+  }
+
+  #unobserve() {
+    const middleGroup = this.#domManager.groupsContainer.children[1]; // 2nd from 3
+    this.#observer.unobserve(middleGroup);
   }
 }

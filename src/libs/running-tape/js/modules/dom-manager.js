@@ -3,9 +3,14 @@ export default class DOMmanager {
     this.groupsContainer = document.createElement('div');
     this.initialGroup = null;
     this.root = rootElem;
+    this.originChildren = this.saveOriginChildren();
 
     this.root.classList.add('tape-screen');
     this.groupsContainer.style.setProperty('--gap', cssGap);
+  }
+
+  saveOriginChildren() {
+    return [...this.root.children].map((elem) => elem.cloneNode(true));
   }
 
   init() {
@@ -15,16 +20,18 @@ export default class DOMmanager {
     // Insert groups in common container (moveable)
     this.groupsContainer.className = 'positioned-tape';
     this.groupsContainer.dataset.x = 0;
+    this.groupsContainer.innerHTML = ''; // clear
     this.groupsContainer.append(this.initialGroup);
 
     this.root.append(this.groupsContainer);
   }
 
   #initGroup() {
-    const elements = [...this.root.children];
+    const elements = this.originChildren;
 
     const group = document.createElement('div');
     group.className = 'group';
+    this.root.innerHTML = '';
     this.root.append(group);
 
     group.append(...elements);
