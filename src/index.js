@@ -1,5 +1,10 @@
 import './style.sass';
 
+/* Global */
+import './page/global/auto-fade-text.js';
+import './page/global/auto-stop-videos.js';
+import './page/global/setVh.js';
+
 /* Preloader */
 import './page/global/preloader/page-preloader.js';
 
@@ -18,7 +23,3 @@ import './page/second-page/sections/header/ps1-index.js';
 import './page/second-page/sections/brief/ps2-index.js';
 import './page/second-page/sections/article/ps3-index.js';
 import './page/second-page/sections/footer/footer.js';
-
-/* Global */
-import './page/global/auto-fade-text.js';
-import './page/global/auto-stop-videos.js';

@@ -8,7 +8,7 @@
 // Text boxes
 .s3-text-box
   @extend .center-content
-  height: 100%
+  height: var(--100vh, 100vh)
   img, video
     display: none
 
@@ -31,7 +31,7 @@
 
   width: 100%
   max-width: 1440px
-  height: 100%
+  height: var(--100vh, 100vh)
   transition: opacity 500ms
 
   &:not(.visible)
