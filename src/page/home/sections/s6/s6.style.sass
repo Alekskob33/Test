@@ -32,8 +32,11 @@
     pointer-events: none
     opacity: 0
     transition: opacity 300ms
-  &:hover .arrow
+  &:hover
     opacity: 1
+  +mobile
+    .arrow
+      opacity: 0.6
 
 .animated-button
   @extend %slides-container
