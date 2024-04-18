@@ -23,9 +23,12 @@ const runningTape = document.querySelector('.s2');
     },
     onComplete: () => {
       preloaderSlider.stop();
-      preloaderContainer.remove();
 
-      fadeIn(mediaContainer, '2500ms');
+      fadeOut(preloaderContainer, '1500ms');
+      setTimeout(() => {
+        preloaderContainer.remove();
+      }, 1500);
+
       if (runningTape) {
         runningTape.style.transform = 'translateY(50%)';
         runningTape.offsetHeight;
