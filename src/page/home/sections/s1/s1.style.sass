@@ -1,3 +1,5 @@
+@import  ../../../global/sass/mixins
+
 .s1
   height: calc(var(--100vh, 100vh) - 20px)
   overflow: hidden
@@ -10,7 +12,8 @@
 
 .video-wrapper
   position: relative
-  width: 800px
+  width: 100%
+  max-width: 800px
 
 /* MAIN VIDEO */
 #main-video
@@ -33,6 +36,8 @@
   cursor: pointer
   transition: opacity 200ms
   &:hover
+    opacity: 0.4
+  +mobile
     opacity: 0.4
 
 .parallax-button
@@ -61,3 +66,5 @@
   &:not(.playing)
     pointer-events: none
     opacity: 0
+  +mobile
+    opacity: 1 !important
