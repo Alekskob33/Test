@@ -43,14 +43,16 @@
 /* Preview grid */
 .s3-preview-grid
   @extend %square-grid
+  height: 100%
 
   position: absolute
   width: 100%
-  left: 0
+  left: 50%
   top: 50%
-  transform: translateY(-50%)
+  transform: translate(-50%, -50%)
   +mobile
     grid-template-columns: repeat(2, 1fr)
+    // grid-template-rows: repeat(3, 33.33%)
 
 .grid-item
   @extend %grid-item
