@@ -31,14 +31,14 @@ export const animationManager = {
     const sortedClones = this.sortImages(clones);
 
     let timeout = 0;
-    const interval = 500; // ms
+    const interval = 150; // ms
 
     // Appear one-by-one (with interval)
     sortedClones.forEach((mediaElem) => {
       timeout += interval;
 
       setTimeout(() => {
-        fadeIn(mediaElem);
+        fadeIn(mediaElem, '200ms ease-in');
       }, timeout);
     });
   },
