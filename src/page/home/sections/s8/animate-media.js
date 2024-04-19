@@ -6,7 +6,7 @@ const mediaElements = document.querySelectorAll(
   '.archive-item img, .archive-item video'
 );
 
-// Animate (fadeIn/fadeOut) img/video
+// Animate (fadeIn/fadeOut) img/video (Viewport intersection)
 const observer = observeElements(mediaElements, {
   onAppear: (el) => {
     const randomDelay = random({ from: 100, to: 700 });
