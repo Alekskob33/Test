@@ -14,7 +14,7 @@ afterDelay(200, () => {
     onDisappear: (elem) => {
       if (elem.matches('#main-video')) {
         showcaseManager.activateDefaultState();
-        // showcaseManager.mainPlayer.currentTime = 0;
+        showcaseManager.mainPlayer.currentTime = 0;
       }
       elem.pause();
     },

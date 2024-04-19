@@ -65,6 +65,7 @@ export default class ShowcaseManager {
     this.animator.fadeIn(this.mainPlayer);
     this.mainPlayer.play();
     this.mainPlayer.volume = 1;
+    this.mainPlayer.currentTime = 0;
 
     this.animator.awaitAnimationEnd(this.smallPlayerContainer, () => {
       this.smallPlayer.pause();
