@@ -2,6 +2,7 @@ import DOMmanager from './modules/dom-manager.js';
 import Animator from './modules/animator.js';
 import Observer from './modules/observer.js';
 import debounce from '../../debounce.js';
+import onHorizontalResize from '../../horizontal-resize.js';
 
 const { log } = console;
 
@@ -38,7 +39,7 @@ export default class Tape {
     // Handle resize (re-calculate and re-populate)
     window.addEventListener(
       'resize',
-      debounce(this.handleResize.bind(this), { ms: 100 })
+      onHorizontalResize(this.handleResize.bind(this))
     );
   }
 
