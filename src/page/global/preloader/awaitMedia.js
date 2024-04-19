@@ -1,6 +1,6 @@
 export const videoAwaiter = {
   duration: null,
-  maxDelay: 2000, // ms
+  maxDelay: 2500, // ms
   timerId: null,
 
   awaitLoading(videoElements, { onProgress, onComplete }) {
@@ -13,8 +13,15 @@ export const videoAwaiter = {
       if (this.duration > 100) {
         onProgress();
       }
+
+      if (this.duration > this.maxDelay) {
+        this.breakTimer();
+        onComplete();
+        return;
+      }
+
       if (this.isCompleted(videoElements)) {
-        if (this.duration <= 100 || this.duration >= this.maxDelay) {
+        if (this.duration <= 100) {
           this.breakTimer();
           onComplete();
           return;
