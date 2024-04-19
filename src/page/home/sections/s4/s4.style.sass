@@ -14,6 +14,8 @@
   @extend %square-grid
   grid-template-columns: repeat(2, 1fr)
   align-items: start
+  +mobile
+    grid-template-rows: auto
 
 .s4-grid-cell
   @extend %grid-item
