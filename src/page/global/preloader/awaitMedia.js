@@ -28,7 +28,7 @@ export const videoAwaiter = {
   },
 
   isReady(video) {
-    return video.readyState >= 4;
+    return video.readyState >= 2;
   },
 
   isCompleted(videoElements) {
