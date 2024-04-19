@@ -1,3 +1,4 @@
+import { btnPlayAnimation } from '../play-btn-animation.js';
 import VideoAnimator from './videoAnimator.js';
 
 export default class ShowcaseManager {
@@ -45,10 +46,12 @@ export default class ShowcaseManager {
 
   activatePlayState() {
     if (this.state === 'playing') return;
+    console.log('🚀 ~ this.state:', this.state);
 
     this.state = 'playing';
     this.#showMainVideo();
     this.playButton.classList.add('playing');
+    btnPlayAnimation.play();
   }
 
   activateDefaultState() {
@@ -57,6 +60,7 @@ export default class ShowcaseManager {
     this.state = 'paused';
     this.#hideMainVideo();
     this.playButton.classList.remove('playing');
+    btnPlayAnimation.play();
   }
 
   #showMainVideo() {

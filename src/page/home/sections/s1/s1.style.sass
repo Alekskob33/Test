@@ -49,19 +49,21 @@
   top: calc(50% - 14px)
   z-index: 1
 
-  width: 0
-  height: 0
-  border-left: 23px solid var(--bg-cursor)
-  border-top: 14px solid transparent
-  border-bottom: 14px solid transparent
+  width: 28px
+  height: 28px
+  // width: 0
+  // height: 0
+  // border-left: 23px solid var(--bg-btn-play)
+  // border-top: 14px solid transparent
+  // border-bottom: 14px solid transparent
 
   font-size: 0
   color: transparent
 
   cursor: pointer
-  transition: top 300ms ease-in, border 300ms linear, transform 200ms linear, opacity 300ms
+  transition: top 200ms ease 500ms
   &.playing
-    border: 14px solid var(--bg-cursor)
+    // border: 14px solid var(--bg-btn-play)
     top: calc(10% - 14px)
   &:not(.playing)
     pointer-events: none
