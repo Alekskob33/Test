@@ -9,7 +9,7 @@ afterDelay(200, () => {
   observeElements(videoCollection, {
     onAppear: (elem) => {
       if (elem.matches('#main-video')) return;
-      elem.play();
+      if (elem.matches('[autoplay]')) elem.play();
     },
     onDisappear: (elem) => {
       if (elem.matches('#main-video')) {
