@@ -46,7 +46,6 @@ export default class ShowcaseManager {
 
   activatePlayState() {
     if (this.state === 'playing') return;
-    console.log('🚀 ~ this.state:', this.state);
 
     this.state = 'playing';
     this.#showMainVideo();
