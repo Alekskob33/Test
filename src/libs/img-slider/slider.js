@@ -1,3 +1,4 @@
+import { logit } from '../../page/global/preloader/logit.js';
 import './slider.style.sass';
 
 export class ImgSlider {
@@ -43,6 +44,7 @@ export class ImgSlider {
         this.currentSlide = nextSlide;
       }
     }, this.interval);
+    logit('slider.run()');
   }
 
   stop() {
