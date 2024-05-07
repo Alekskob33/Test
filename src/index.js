@@ -25,7 +25,7 @@ import './page/global/preloader/page-preloader.js';
 // import './page/home/sections/s8/s8-index.js';
 
 /* Case Study */
-import './page/second-page/sections/header/ps1-index.js';
-import './page/second-page/sections/brief/ps2-index.js';
-import './page/second-page/sections/article/ps3-index.js';
-import './page/second-page/sections/footer/footer.js';
+// import './page/second-page/sections/header/ps1-index.js';
+// import './page/second-page/sections/brief/ps2-index.js';
+// import './page/second-page/sections/article/ps3-index.js';
+// import './page/second-page/sections/footer/footer.js';
