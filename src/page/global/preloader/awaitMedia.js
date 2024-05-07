@@ -1,5 +1,4 @@
 import { isCorrectSource } from './check-source.js';
-import { logit } from './logit.js';
 
 export const videoAwaiter = {
   duration: 0,
@@ -13,12 +12,10 @@ export const videoAwaiter = {
 
   awaitLoading(videoElements, { onProgress, onComplete }) {
     let totalLength = videoElements.length;
-    logit('correct length', totalLength > 0);
 
     const correctVideos = [];
     if (videoElements.length < 1) return onComplete();
     onProgress();
-    logit('onProgress', 'handled');
 
     const promises = [...videoElements].map((video) => {
       return isCorrectSource(video.src);
@@ -29,7 +26,6 @@ export const videoAwaiter = {
       this.duration += 100;
       if (this.isComplete(totalLength)) {
         if (this.duration > this.maxDelay) {
-          logit('loaded', true);
           this.breakTimer();
           onComplete();
           return;
@@ -45,7 +41,6 @@ export const videoAwaiter = {
       });
 
       totalLength = correctVideos.length;
-      logit('settled length', correctVideos.length);
 
       // Handle 'canplay' status
       correctVideos.forEach((video) => {

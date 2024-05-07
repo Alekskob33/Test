@@ -10,7 +10,8 @@
   color: var(--color-header-tape)
 
 .header-tape
-  +font-size(150px, 50px)
+  // use css-variable in html (fix bug of missing styles when js already runs)
+  // +font-size(150px, 50px) 
   font-weight: 500
   user-select: none
   *

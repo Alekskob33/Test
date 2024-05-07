@@ -53,6 +53,20 @@
         --color-dimmed: #586065;
         --color-active-link: #3bfb2a;
       }
+      .positioned-tape,
+      .super-group,
+      .group {
+        display: flex;
+        white-space: nowrap;
+      }
+      .header-tape {
+        font-size: var(--size-desktop, 150px);
+      }
+      @media screen and (max-width: 1024px) {
+        .header-tape {
+          font-size: var(--size-mobile, 50px);
+        }
+      }
     </style>
   </head>
   <body class="page">
@@ -110,7 +124,7 @@
     </section>
 
     <!-- Section 2 | Running Tape -->
-    <section class="s2">
+    <section class="s2" style="--size-desktop: 150px; --size-mobile: 50px">
       <div class="header-tape">
         <i data-splitter="—">Previously experience</i>
       </div>

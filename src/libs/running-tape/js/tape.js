@@ -1,10 +1,7 @@
 import DOMmanager from './modules/dom-manager.js';
 import Animator from './modules/animator.js';
 import Observer from './modules/observer.js';
-import debounce from '../../debounce.js';
 import onHorizontalResize from '../../horizontal-resize.js';
-
-const { log } = console;
 
 export default class Tape {
   #rootElem;
@@ -14,7 +11,7 @@ export default class Tape {
   #options;
 
   constructor({ rootElem, cssGap = 0, speed = 1.3 }) {
-    this.isValidRoot = rootElem instanceof Element;
+    this.isValidRoot = rootElem instanceof HTMLElement;
     if (!this.isValidRoot) return;
 
     cssGap = Number.parseFloat(cssGap);

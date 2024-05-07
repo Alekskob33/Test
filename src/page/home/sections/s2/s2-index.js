@@ -1,8 +1,8 @@
+import '../../../../libs/running-tape/css/style.css';
 import './s2.style.sass';
 import Tape from '../../../../libs/running-tape/js/tape.js';
-import '../../../../libs/running-tape/css/style.css';
-const tapeContainer = document.querySelector('.header-tape');
 
+const tapeContainer = document.querySelector('.header-tape');
 export let tapeS2;
 
 if (tapeContainer) {
@@ -14,8 +14,7 @@ if (tapeContainer) {
     speed: 1.3,
   });
 
-  // Starts after preloader hides (tape is moving up)
-  // tapeS2.start();
+  // Starts tapeS2.start(), but after preloader hides (tape is moving up)
 }
 
 function showSmoothly() {

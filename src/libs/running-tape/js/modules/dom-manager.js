@@ -41,13 +41,14 @@ export default class DOMmanager {
   fitScreen() {
     const screenWidth = this.root.offsetWidth;
     const lastGroup = this.groupsContainer.lastElementChild;
+    const groupLength = this.groupsContainer.children.length;
+    const elemWidth = lastGroup.offsetWidth;
 
-    const lastElemOffsetX = lastGroup.lastElementChild.offsetLeft;
-    const hasEmptySpace = (lastElemOffsetX) => {
-      return screenWidth - lastElemOffsetX > 0;
+    const hasEmptySpace = () => {
+      return screenWidth - elemWidth * groupLength > 0;
     };
 
-    if (hasEmptySpace(lastElemOffsetX)) {
+    if (hasEmptySpace()) {
       const clone = lastGroup.cloneNode(true);
       this.groupsContainer.append(clone);
 
