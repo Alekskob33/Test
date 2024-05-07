@@ -12,7 +12,7 @@ import './style.sass';
 // import './page/global/setVh.js';
 
 /* Preloader */
-import './page/global/preloader/page-preloader.js';
+// import './page/global/preloader/page-preloader.js';
 
 /* Home */
 // import './page/home/sections/s1/module.js';
