@@ -7,9 +7,9 @@ logit('logging starts');
 import './style.sass';
 
 /* Global */
-import './page/global/auto-fade-text.js';
-import './page/global/auto-stop-videos.js';
-import './page/global/setVh.js';
+// import './page/global/auto-fade-text.js';
+// import './page/global/auto-stop-videos.js';
+// import './page/global/setVh.js';
 
 /* Preloader */
 import './page/global/preloader/page-preloader.js';
