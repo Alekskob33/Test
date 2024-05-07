@@ -15,4 +15,4 @@ export function logit(labelText, value = '') {
 
 setTimeout(() => {
   logScreen.classList.add('finished');
-}, 3000);
+}, 5000);
