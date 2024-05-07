@@ -37,7 +37,7 @@ logit('videos', awaitedMedia.length);
       setTimeout(() => {
         preloaderContainer.remove();
         logit('onComplete', 'hide overlay');
-        tapeS2.start();
+        tapeS2?.start();
       }, 1000);
 
       if (runningTape) {

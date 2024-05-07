@@ -1,3 +1,9 @@
+import { logit } from './page/global/preloader/logit.js';
+window.onerror = (error) => {
+  logit('error', error);
+};
+logit('logging starts');
+
 import './style.sass';
 
 /* Global */
@@ -23,8 +29,3 @@ import './page/second-page/sections/header/ps1-index.js';
 import './page/second-page/sections/brief/ps2-index.js';
 import './page/second-page/sections/article/ps3-index.js';
 import './page/second-page/sections/footer/footer.js';
-import { logit } from './page/global/preloader/logit.js';
-
-window.onerror = (error) => {
-  logit('error', error);
-};
