@@ -3,12 +3,14 @@ import { fadeIn, fadeOut } from '../../../libs/fade-animation.js';
 import { ImgSlider } from '../../../libs/img-slider/slider.js';
 import { tapeS2 } from '../../home/sections/s2/s2-index.js';
 import { videoAwaiter } from './awaitMedia.js';
+import { disableScroll, enableScroll } from './disable-scroll.js';
 
 // Preloader node
 const preloaderContainer = document.querySelector('#preloader');
 
 (() => {
   if (!preloaderContainer) return;
+  disableScroll();
 
   const preloaderSlider = new ImgSlider({ interval: 150 }).initSlider(
     document.querySelector('.preloader-slider')
@@ -32,6 +34,7 @@ const preloaderContainer = document.querySelector('#preloader');
       setTimeout(() => {
         preloaderContainer.remove();
         tapeS2?.start();
+        enableScroll();
       }, 1000);
 
       if (runningTape) {
