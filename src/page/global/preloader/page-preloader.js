@@ -6,17 +6,19 @@ import { videoAwaiter } from './awaitMedia.js';
 
 // Preloader node
 const preloaderContainer = document.querySelector('#preloader');
-const preloaderSlider = new ImgSlider({ interval: 150 }).initSlider(
-  document.querySelector('.preloader-slider')
-);
-const slides = preloaderSlider.slides;
-
-// Elements to await
-const awaitedMedia = document.querySelectorAll('.js-await-media video');
-const runningTape = document.querySelector('.s2');
 
 (() => {
   if (!preloaderContainer) return;
+
+  const preloaderSlider = new ImgSlider({ interval: 150 }).initSlider(
+    document.querySelector('.preloader-slider')
+  );
+  const slides = preloaderSlider.slides;
+
+  // Elements to await
+  const awaitedMedia = document.querySelectorAll('.js-await-media video');
+  const runningTape = document.querySelector('.s2');
+
   // Await video loading
   videoAwaiter.awaitLoading(awaitedMedia, {
     onProgress: () => {
