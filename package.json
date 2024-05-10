@@ -28,6 +28,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
-    "animejs": "^3.2.2"
+    "animejs": "^3.2.2",
+    "postcss-delete-duplicate-css": "^1.0.0"
   }
 }

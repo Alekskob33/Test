@@ -24,4 +24,4 @@ import './page/second-page/sections/brief/ps2-index.js';
 import './page/second-page/sections/article/ps3-index.js';
 import './page/second-page/sections/footer/footer.js';
 
-import './CustomStylesFromMaks/main.css';
+// import './CustomStylesFromMaks/main.css';
