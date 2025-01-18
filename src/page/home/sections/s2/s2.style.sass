@@ -1,20 +1,14 @@
 @import  ../../../global/sass/mixins
 
 .s2
-  position: relative
-  z-index: 1
-  margin-left: -20px
-  margin-right: -20px
-  +margin(margin-bottom, 105px)
+  &__article
+    margin-bottom: 100px
 
-  color: var(--color-header-tape)
-
-.header-tape
-  // use css-variable in html (fix bug of missing styles when js already runs)
-  // +font-size(150px, 50px) 
-  font-weight: 500
-  user-select: none
-  *
-    font-style: normal
-  [data-splitter]::before
-    content: "\00a0" attr(data-splitter) "\00a0"
+  &__title,
+  &__link
+    opacity: 0.2
+    filter: blur(5px)
+    transition: opacity 300ms, filter 300ms 150ms
+    &.un-blur
+      opacity: 1
+      filter: blur(0)
