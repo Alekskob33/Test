@@ -9,7 +9,6 @@ export default function onHorizontalResize(fn) {
       const diff = Math.abs(prevViewportHeight - newHeight);
       prevViewportHeight = newHeight; // update
 
-      if (diff > 0) return;
       fn();
     },
     { ms: 100 }

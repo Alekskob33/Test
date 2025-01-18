@@ -1,5 +1,6 @@
 @import ./page/global/sass/grid
 @import ./page/global/sass/mixins
+@import ./page/global/sass/colors
 
 // Colors vars (in html <style>)
 
@@ -7,8 +8,8 @@ body
   background: var(--bg)
   scroll-behavior: smooth
 
-  color: var(--color)
-  font-size: 12px
+  color: var(--font-color)
+  font-size: 14px
   font-family: 'Wix Madefor Display', sans-serif
   font-optical-sizing: auto
   font-weight: 400
@@ -16,11 +17,11 @@ body
 
 .page
   width: 100%
-  max-width: 1440px
+  // max-width: 1440px
   overflow-x: hidden
 
   margin: 0 auto
-  padding: 20px
+  padding: 0 20px
 
   @media screen and (max-width: 1024px)
     min-width: 320px
@@ -35,14 +36,10 @@ h1,h2,h3,h4,h5,h6
   font-size: inherit
   font-weight: normal
 
-.large-title
-  +font-size(150px, 50px)
-  font-weight: 500
-  line-height: 1.1em
-  img
-    display: inline-block
-    height: 1em
-    margin-bottom: -0.2em
+// .large-title
+//   +font-size(150px, 50px)
+//   font-weight: 500
+//   line-height: 1.1em
 
 %button
   border: none
@@ -56,13 +53,13 @@ button
 
 section
   position: relative
-  &.hidden
-    position: absolute
-    z-index: -1
-    left: 200vw
-    width: 100%
-    height: 0
-    overflow: hidden
+  // &.hidden
+  //   position: absolute
+  //   z-index: -1
+  //   left: 200vw
+  //   width: 100%
+  //   height: 0
+  //   overflow: hidden
 
 .center-content
   @extend %center-content
@@ -70,5 +67,17 @@ section
 .narrow
   @extend %narrow
 
+.vh100
+  height: var(--100vh)
+
+.center-content
+  @extend %center-content
+
+.narrow
+  @extend %narrow
+
+.inaccessible
+  pointer-events: none
+
 // DEV
-@import dev.style.sass
+// @import dev.style.sass
