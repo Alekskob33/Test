@@ -1,62 +1,35 @@
 @import ../../../global/sass/grid
 @import ../../../global/sass/mixins
+@import ../../../global/sass/colors
 
-.s3
-  position: relative
-  +margin(margin-bottom, 240px)
-
-// Text boxes
-.s3-text-box
-  @extend %center-content
-  height: var(--100vh, 100vh)
-  img, video
-    display: none
-
-.s3-paragraph
-  max-width: 1000px
-
-  +font-size(55px, 25px)
-  line-height: 1.3em
-  img
-    display: inline-block
-    height: 1.09em
-    margin-bottom: -0.27em
-  i
-    white-space: nowrap
-    font-style: normal
-
-/* Preview fixed wrapper */
-.s3-fixed-container
-  position: fixed
-  left: 50%
-  top: 50%
-  transform: translate(-50%, -50%)
-
+video
   width: 100%
-  max-width: 1440px
-  height: var(--100vh, 100vh)
-  transition: opacity 50ms
+  max-width: 70%
+  @mobile
+    max-width: 100%
 
-  &:not(.visible)
-    position: absolute
-    right: 200vw
-    visibility: hidden
-    opacity: 0
+// .video-wrapper
+//   &:hover
+//     .play-button
+//       display: block
 
-/* Preview grid */
-.s3-preview-grid
-  @extend %square-grid
-  height: 100%
-
+// video controls (play and stop buttons)
+.video-control
   position: absolute
-  width: 100%
   left: 50%
   top: 50%
   transform: translate(-50%, -50%)
+  z-index: 1
+  cursor: pointer
 
-.grid-item
-  @extend %grid-item
-  padding: 15%
-  img, video
-    @extend %tune-media
-    opacity: 0
+.play-button
+  display: none
+  width: 34.75%
+
+.stop-button
+  display: none
+  width: 296px
+  height: 296px
+  border: 1px solid var(--green)
+.s3
+  // &__video
