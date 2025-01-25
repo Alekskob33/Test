@@ -2,23 +2,21 @@
 @import ../../../global/sass/mixins
 @import ../../../global/sass/colors
 
+.video-wrapper
+  position: relative
+
 video
   width: 100%
   max-width: 70%
   @mobile
     max-width: 100%
 
-// .video-wrapper
-//   &:hover
-//     .play-button
-//       display: block
-
-// video controls (play and stop buttons)
+// Buttons
 .video-control
   position: absolute
-  left: 50%
-  top: 50%
-  transform: translate(-50%, -50%)
+  // left: 50%
+  // top: 50%
+  transform: translate(var(--x), var(--y))
   z-index: 1
   cursor: pointer
 
@@ -31,5 +29,6 @@ video
   width: 296px
   height: 296px
   border: 1px solid var(--green)
+
 .s3
   // &__video
