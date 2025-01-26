@@ -15,7 +15,7 @@ import './page/home/sections/s1/s1-index.js';
 import './page/home/sections/s2/s2-index.js';
 import './page/home/sections/s3/s3-index.js';
 import './page/home/sections/s4/s4-index.js';
-// import './page/home/sections/s5/s5-index.js';
+import './page/home/sections/date/date-index.js';
 // import './page/home/sections/s6/s6-index.js';
 // import './page/home/sections/s7/s7-index.js';
 // import './page/home/sections/s8/s8-index.js';
