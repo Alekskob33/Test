@@ -1,36 +1,5 @@
 # MaxPirogov
 
-## Fix
+### design 2025
 
-1. Add this styles for runningTape (main page)
-   - it avoids js issue, when styles needs
-
-```html
-<head>
-  <style>
-    .positioned-tape,
-    .super-group,
-    .group {
-      display: flex;
-      white-space: nowrap;
-    }
-    .header-tape {
-      font-size: var(--size-desktop, 150px);
-    }
-    @media screen and (max-width: 1024px) {
-      .header-tape {
-        font-size: var(--size-mobile, 50px);
-      }
-    }
-  </style>
-</head>
-```
-
-1. And now the .s2 section (runningTape) must have these inline styles:
-
-```html
-<section
-  style="--size-desktop: 150px; --size-mobile: 50px"
-  class="s2"
-></section>
-```
+[Specification link >>>](<https://www.figma.com/design/lCjmsw5jDfjP8etaXa1tEX/Pirogov.design-(2024%2F2025)?node-id=2406-514&t=rBAismdrWubUthnJ-1>)
