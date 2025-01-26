@@ -4,12 +4,14 @@
 
 .video-wrapper
   position: relative
+  width: 100%
+  max-width: 50%
+  margin: 150px auto
+  @mobile
+    max-width: 100%
 
 video
   width: 100%
-  max-width: 70%
-  @mobile
-    max-width: 100%
 
 // Buttons
 .video-control
@@ -26,8 +28,8 @@ video
 
 .stop-button
   display: none
-  width: 296px
-  height: 296px
+  width: 37%
+  aspect-ratio: 1 / 1
   border: 1px solid var(--green)
 
 .s3

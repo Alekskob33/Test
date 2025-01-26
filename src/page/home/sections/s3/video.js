@@ -1,20 +1,27 @@
+import { initDefaultVideo } from './initDefaultVideo.js';
 import { parallax } from './parallax.js';
+import { renderButtonsForVideo } from './render-buttons.js';
 import { scrollToCenter } from './scrollToCenter.js';
 import { hideButton, showButton } from './video-buttons.js';
 
 // Elements
-const allVideos = [...document.querySelectorAll('video')];
+export const allVideos = [...document.querySelectorAll('video')];
 
-export const videoElements = allVideos.filter((video) => {
-  const playBtn = video.closest('div').querySelector('.play-button');
-  const stopBtn = video.closest('div').querySelector('.stop-button');
-  return playBtn && stopBtn ? video : false;
+export const videoElements = allVideos.filter((videoEl) => {
+  initDefaultVideo(videoEl);
+  // renderButtonsForVideo(videoEl);
+
+  if (videoEl.matches('[custom-controls]')) {
+    renderButtonsForVideo(videoEl);
+    return videoEl;
+  }
+
+  return false;
 });
 
 // Replay video
 function restartVideo(videoElem) {
   videoElem.muted = false;
-  console.log(videoElem.muted);
   videoElem.currentTime = 0;
   videoElem.play();
 }
@@ -23,6 +30,9 @@ function restartVideo(videoElem) {
 export function muteVideo(videoElem) {
   videoElem.muted = true;
 }
+
+// BUG: buttons are not visible on mobile
+// because there is not mouseenter/mouseleave/mousemove events
 
 // Handle click on buttons
 document.addEventListener('click', ({ target }) => {
@@ -86,9 +96,9 @@ videoElements.forEach((videoElem) => {
     const playBtn = videoElem.closest('div').querySelector('.play-button');
     if (!videoElem || !playBtn) return;
     if (!videoElem.muted) return;
+    console.log('mouse enter');
 
     // Show play-button
-    console.log('mouse enter');
     showButton(playBtn);
   });
 
