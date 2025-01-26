@@ -1,31 +1,23 @@
 @import ../../../global/sass/grid
 @import ../../../global/sass/mixins
+@import ../../../global/sass/typography
 
 .s4
-  +margin(margin-bottom, 123px)
+  margin-bottom: 40px
 
-.s4-title
-  +margin(margin-bottom, 120px)
-  i
-    white-space: nowrap
-    font-style: normal
+.navigation
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 10px
 
-.s4-images-box
-  @extend %square-grid
-  grid-template-columns: repeat(2, 1fr)
-  align-items: start
+  width: 30%
   +mobile
-    grid-template-rows: auto
+    width: 75%
 
-.s4-grid-cell
-  @extend %grid-item
-  aspect-ratio: unset
-  padding: 0
-  .cell
-    @extend %center-content
+  a
+    @extend .link
     width: 100%
-    padding: 15%
-    border: 1px solid #353B3F
-  img, video
-    @extend %tune-media
-    opacity: 1
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
