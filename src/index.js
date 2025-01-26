@@ -1,6 +1,6 @@
 import './style.sass';
 
-import './dev.style.sass';
+// import './dev.style.sass';
 
 /* Global */
 // import './page/global/auto-fade-text.js';
