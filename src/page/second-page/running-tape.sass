@@ -1,0 +1,16 @@
+@import  ../global/sass/mixins
+
+.section-tape
+  position: relative
+  margin-top: 40px
+  margin-left: -20px
+  margin-right: -20px
+
+.text-tape
+  font-weight: 500
+  color: var(--grey)
+  user-select: none
+  *
+    font-style: normal
+  [data-splitter]::before
+    content: "\00a0" attr(data-splitter) "\00a0"
