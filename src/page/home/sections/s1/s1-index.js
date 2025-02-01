@@ -1,4 +1,4 @@
-import './style.sass';
+import './s1.style.sass';
 
 import { fadeIn, fadeOut } from '../../../../libs/fade-animation.js';
 import { observeElements } from '../../../../libs/observe-elements.js';
@@ -22,14 +22,14 @@ import { disableAccessTo, enableAccessTo } from './toggleTargetsAccess.js';
     onAppear: (el) => {
       if (titleElement) fadeIn(titleElement, '200ms 0ms ease-in');
       if (dotElement) fadeIn(dotElement, '200ms 0ms ease-in');
-      if (textElement) fadeIn(textElement, '500ms 0ms ease-in');
+      if (textElement) fadeIn(textElement, '300ms 0ms ease-in');
 
       enableAccessTo([titleElement, dotElement, textElement]);
     },
     onDisappear: (el) => {
       if (titleElement) fadeOut(titleElement, '200ms 0ms ease-in');
       if (dotElement) fadeOut(dotElement, '200ms 0ms ease-in');
-      if (textElement) fadeOut(textElement, '700ms 200ms ease-in');
+      if (textElement) fadeOut(textElement, '300ms 200ms ease-in');
 
       disableAccessTo([titleElement, dotElement, textElement]);
     },
