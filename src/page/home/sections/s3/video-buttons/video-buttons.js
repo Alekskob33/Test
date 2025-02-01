@@ -1,4 +1,4 @@
-import { fadeIn, fadeOut } from '../../../../libs/fade-animation.js';
+import { fadeIn, fadeOut } from '../../../../../libs/fade-animation.js';
 
 let timerID;
 

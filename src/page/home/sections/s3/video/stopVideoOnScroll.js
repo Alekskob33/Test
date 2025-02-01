@@ -1,5 +1,5 @@
-import { observeElements } from '../../../../libs/observe-elements.js';
-import { hideButton, showButton } from './video-buttons.js';
+import { observeElements } from '../../../../../libs/observe-elements.js';
+import { hideButton, showButton } from '../video-buttons/video-buttons.js';
 import { allVideos, muteVideo, videoElementsWithButtons } from './video.js';
 
 const options = {

@@ -1,10 +1,14 @@
-import { isMobile } from '../../../../libs/detect-mobile-device.js';
+import { isMobile } from '../../../../../libs/detect-mobile-device.js';
 import { handlePlay, handleStop } from './handle-play-stop.js';
 import { initDefaultVideo } from './initDefaultVideo.js';
-import { parallax } from './parallax.js';
-import { renderButtonsForVideo } from './render-buttons.js';
-import { scrollToCenter } from './scrollToCenter.js';
-import { getButtons, hideButton, showButton } from './video-buttons.js';
+import { parallax } from '../parallax.js';
+import { renderButtonsForVideo } from '../video-buttons/render-buttons.js';
+import { scrollToCenter } from '../scrollToCenter.js';
+import {
+  getButtons,
+  hideButton,
+  showButton,
+} from '../video-buttons/video-buttons.js';
 
 // Elements
 export const allVideos = [...document.querySelectorAll('video')];

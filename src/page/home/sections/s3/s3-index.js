@@ -1,5 +1,5 @@
 import './s3.style.sass';
 
-import './video.js';
-import './stopVideoOnScroll.js';
-import './init-video-on-mobile.js';
+import './video/video.js';
+import './video/stopVideoOnScroll.js';
+import './video/init-video-on-mobile.js';

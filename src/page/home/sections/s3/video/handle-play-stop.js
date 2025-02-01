@@ -1,6 +1,10 @@
-import { isMobile } from '../../../../libs/detect-mobile-device.js';
-import { scrollToCenter } from './scrollToCenter.js';
-import { getButtons, hideButton, showButton } from './video-buttons.js';
+import { isMobile } from '../../../../../libs/detect-mobile-device.js';
+import { scrollToCenter } from '../scrollToCenter.js';
+import {
+  getButtons,
+  hideButton,
+  showButton,
+} from '../video-buttons/video-buttons.js';
 import { muteVideo, restartVideo } from './video.js';
 
 export function handlePlay(videoElem) {
