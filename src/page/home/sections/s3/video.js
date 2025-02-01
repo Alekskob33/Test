@@ -1,13 +1,15 @@
+import { isMobile } from '../../../../libs/detect-mobile-device.js';
+import { handlePlay, handleStop } from './handle-play-stop.js';
 import { initDefaultVideo } from './initDefaultVideo.js';
 import { parallax } from './parallax.js';
 import { renderButtonsForVideo } from './render-buttons.js';
 import { scrollToCenter } from './scrollToCenter.js';
-import { hideButton, showButton } from './video-buttons.js';
+import { getButtons, hideButton, showButton } from './video-buttons.js';
 
 // Elements
 export const allVideos = [...document.querySelectorAll('video')];
 
-export const videoElements = allVideos.filter((videoEl) => {
+export const videoElementsWithButtons = allVideos.filter((videoEl) => {
   initDefaultVideo(videoEl);
   // renderButtonsForVideo(videoEl);
 
@@ -20,7 +22,7 @@ export const videoElements = allVideos.filter((videoEl) => {
 });
 
 // Replay video
-function restartVideo(videoElem) {
+export function restartVideo(videoElem) {
   videoElem.muted = false;
   videoElem.currentTime = 0;
   videoElem.play();
@@ -36,27 +38,38 @@ export function muteVideo(videoElem) {
 
 // Handle click on buttons
 document.addEventListener('click', ({ target }) => {
-  const playBtn = target.closest('.play-button');
-  const stopBtn = target.closest('.stop-button');
+  const isPlayClicked = target.closest('.play-button');
+  const isStopClicked = target.closest('.stop-button');
+  const isVideoClicked = target.closest('video');
+
+  if (!isPlayClicked && !isStopClicked && !isVideoClicked) return;
+
   const videoElem = target.closest('div')?.querySelector('video');
+  const { playBtn, stopBtn } = getButtons(videoElem);
 
-  if (!videoElem) return;
+  if (!videoElem.matches('[custom-controls]')) return;
 
-  if (playBtn) {
-    restartVideo(videoElem);
-    hideButton(playBtn);
-    scrollToCenter(videoElem);
+  if (isPlayClicked) {
+    handlePlay(videoElem);
     return;
   }
-  if (stopBtn) {
-    muteVideo(videoElem);
-    hideButton(stopBtn);
+  if (isStopClicked) {
+    handleStop(videoElem);
     return;
+  }
+  if (isVideoClicked && isMobile()) {
+    if (playBtn.style.display == 'block') {
+      handlePlay(videoElem);
+      return;
+    } else {
+      handleStop(videoElem);
+      showButton(playBtn);
+    }
   }
 });
 
 // Handle events on video frame
-videoElements.forEach((videoElem) => {
+videoElementsWithButtons.forEach((videoElem) => {
   const videoWrapper = videoElem.closest('div');
   let timerId;
 
@@ -64,6 +77,8 @@ videoElements.forEach((videoElem) => {
   videoWrapper.addEventListener(
     'mousemove',
     ({ clientX, clientY, currentTarget }) => {
+      if (isMobile()) return;
+
       const playBtn = videoElem.closest('div').querySelector('.play-button');
       const stopBtn = videoElem.closest('div').querySelector('.stop-button');
       if (!videoElem || !stopBtn) return;
@@ -93,6 +108,8 @@ videoElements.forEach((videoElem) => {
 
   // Handle mouse-over (show play-btn)
   videoWrapper.addEventListener('mouseenter', () => {
+    if (isMobile()) return;
+
     const playBtn = videoElem.closest('div').querySelector('.play-button');
     if (!videoElem || !playBtn) return;
     if (!videoElem.muted) return;
@@ -104,6 +121,8 @@ videoElements.forEach((videoElem) => {
 
   // Handle mouse-leave (hide play-btn)
   videoWrapper.addEventListener('mouseleave', () => {
+    if (isMobile()) return;
+
     const playBtn = videoElem.closest('div').querySelector('.play-button');
     const stopBtn = videoElem.closest('div').querySelector('.stop-button');
 

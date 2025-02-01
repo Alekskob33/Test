@@ -1,6 +1,6 @@
 import { observeElements } from '../../../../libs/observe-elements.js';
 import { hideButton, showButton } from './video-buttons.js';
-import { allVideos, muteVideo, videoElements } from './video.js';
+import { allVideos, muteVideo, videoElementsWithButtons } from './video.js';
 
 const options = {
   threshold: 0.3,

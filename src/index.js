@@ -5,6 +5,7 @@ import './style.sass';
 /* Global */
 // import './page/global/auto-fade-text.js';
 // import './page/global/auto-stop-videos.js';
+import './libs/detect-mobile-device.js';
 import './page/global/setVh.js';
 
 /* Preloader */

@@ -16,3 +16,10 @@ export function hideButton(buttonElem) {
     buttonElem.style.display = 'none';
   }, 500);
 }
+
+export function getButtons(videoElement) {
+  const playBtn = videoElement.closest('div').querySelector('.play-button');
+  const stopBtn = videoElement.closest('div').querySelector('.stop-button');
+
+  return { playBtn, stopBtn };
+}
