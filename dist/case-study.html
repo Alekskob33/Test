@@ -77,13 +77,16 @@
     <!-- SECTION 3 -->
     <section class="section-case">
       <div class="row">
-        <div class="card" style="--min-h: 542px">
+        <div zoom-out class="card" style="--min-h: 542px">
           <div class="card__media" style="--bg: #072510">
-            <img src="./assets/case/card1.png" alt="" />
+            <!-- <img src="./assets/card1.png" alt="" /> -->
+            <video>
+              <source src="./assets/case/video-case.mp4" type="video/mp4" />
+            </video>
           </div>
           <h3 class="card__desc">CRM и приложение сотрудника</h3>
         </div>
-        <div class="card" style="--min-h: 1049px">
+        <div zoom-out class="card" style="--min-h: 1049px">
           <div class="card__media" style="--bg: #241336">
             <img src="./assets/case/card2.png" alt="" />
           </div>
@@ -93,16 +96,23 @@
     </section>
     <!-- SECTION 4 -->
     <section class="section-case">
+      <p class="text-center">
+        Команда продуктового дизайна с кайфом делает дизайны для смежных команд
+        и областей бизнеса компании. Так, например, мы сделали дизайн для
+        портала поддержки и dev-портала. А ещё, разработали маскота, гайд для
+        визуальных коммуникаций отдела маркетинга, новый сайт и много другого
+        классного.
+      </p>
       <!-- row -->
       <div class="row" style="--min-h: 545px">
         <div class="card">
           <div class="card__media" style="--bg: #8eac6d">
-            <img src="./assets/case/card3.png" alt="" />
+            <img zoom-out src="./assets/case/card3.png" alt="" />
           </div>
         </div>
         <div class="card">
           <div class="card__media" style="--bg: #1f392b">
-            <img src="./assets/case/card4.png" alt="" />
+            <img zoom-out src="./assets/case/card4.png" alt="" />
           </div>
         </div>
       </div>
@@ -110,12 +120,12 @@
       <div class="row" style="--min-h: 545px">
         <div class="card">
           <div class="card__media" style="--bg: #faea83">
-            <img src="./assets/case/card5.png" alt="" />
+            <img zoom-out src="./assets/case/card5.png" alt="" />
           </div>
         </div>
         <div class="card">
           <div class="card__media" style="--bg: #8e4230">
-            <img src="./assets/case/card6.png" alt="" />
+            <img zoom-out src="./assets/case/card6.png" alt="" />
           </div>
         </div>
       </div>
@@ -132,7 +142,7 @@
       <div class="row" style="--min-h: 620px">
         <div class="card">
           <div class="card__media" style="--bg: #211d17">
-            <img src="./assets/case/card7.png" alt="" />
+            <img zoom-out src="./assets/case/card7.png" alt="" />
           </div>
         </div>
       </div>
@@ -141,7 +151,7 @@
         <div class="card"></div>
         <div class="card">
           <div class="card__media" style="--bg: #112739">
-            <img src="./assets/case/card8.png" alt="" />
+            <img zoom-out src="./assets/case/card8.png" alt="" />
           </div>
         </div>
       </div>
@@ -160,16 +170,16 @@
           <div class="card__media" style="--bg: blue">
             <!-- <img src="./assets/card8.png" alt="" /> -->
           </div>
-          <div class="card__desc">
+          <h3 class="card__desc">
             Договорились с аккаунтингом компании, что при возникновении проблем
             наш клиент может отправить свой файл и всё сделают за него
-          </div>
+          </h3>
         </div>
         <div class="card">
           <div class="card__media" style="--bg: red">
             <!-- <img src="./assets/card8.png" alt="" /> -->
           </div>
-          <div class="card__desc">Селф-сервис</div>
+          <h3 class="card__desc">Селф-сервис</h3>
         </div>
       </div>
       <!-- row -->
@@ -178,7 +188,7 @@
           <div class="card__media" style="--bg: orange">
             <!-- <img src="./assets/card8.png" alt="" /> -->
           </div>
-          <div class="card__desc">Документация для партнёров компании</div>
+          <h3 class="card__desc">Документация для партнёров компании</h3>
         </div>
         <div class="card"></div>
       </div>
@@ -224,11 +234,11 @@
       <div class="row" style="--min-h: 542px; --max-h: 700px">
         <div class="card">
           <div class="card__media" style="--bg: blue"></div>
-          <div class="card__desc">Компоненты</div>
+          <h3 class="card__desc">Компоненты</h3>
         </div>
         <div class="card">
           <div class="card__media" style="--bg: red"></div>
-          <div class="card__desc">Токены</div>
+          <h3 class="card__desc">Токены</h3>
         </div>
       </div>
       <!-- row -->
@@ -236,7 +246,7 @@
         <div class="card"></div>
         <div class="card" style="--min-h: 542px">
           <div class="card__media" style="--bg: blue"></div>
-          <div class="card__desc">Гайды</div>
+          <h3 class="card__desc">Гайды</h3>
         </div>
       </div>
     </section>
@@ -282,9 +292,9 @@
       <span class="date__value grey">09–25</span>
     </section>
     <section class="section-tape">
-      <div class="text-tape">
+      <a href="" class="text-tape text-tape--link link">
         <i data-splitter="—">Как мы сделали self-service подключения</i>
-      </div>
+      </a>
     </section>
   </body>
 </html>
