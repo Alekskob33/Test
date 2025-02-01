@@ -7,6 +7,7 @@ import './style.sass';
 // import './page/global/auto-stop-videos.js';
 import './libs/detect-mobile-device.js';
 import './page/global/setVh.js';
+import './page/second-page/zoom-out.js';
 
 /* Preloader */
 // import './page/global/preloader/page-preloader.js';
