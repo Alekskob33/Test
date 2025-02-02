@@ -22,5 +22,30 @@
     width: 8px
     height: 8px
     display: block
-    border-radius: 50%
+    border-radius: 4px
     background-color: currentColor
+    animation: animate-dot 2500ms both infinite
+
+@keyframes animate-dot
+  from
+    height: 8px
+    transform: translateY(8px)
+    opacity: 0
+  20%
+    height: 8px
+    transform: translateY(0px)
+    opacity: 1
+  50%
+    height: 16px
+    transform: translateY(8px)
+    opacity: 1
+  51%
+    height: 16px
+    transform: translateY(8px)
+    opacity: 1
+  70%
+    opacity: 1
+    height: 8px
+    transform: translateY(8px)
+  to
+    opacity: 0
