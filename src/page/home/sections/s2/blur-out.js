@@ -1,6 +1,6 @@
 import { observeElements } from '../../../../libs/observe-elements.js';
 
-const targets = [...document.querySelectorAll('[blur-transition]')];
+const targets = [...document.querySelectorAll('[blur-out]')];
 
 const options = {
   threshold: 0.3,
