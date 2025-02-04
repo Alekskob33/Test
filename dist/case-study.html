@@ -43,10 +43,8 @@
       content="./assets/favicons/browserconfig.xml"
     />
     <link rel="manifest" href="./assets/favicons/site.webmanifest" />
-    <link rel="stylesheet" href="./assets/custom-style.css?v01" />
-    <script defer src="main.bundle.js?v01"></script>
-    <link href="./main.css?v01" rel="stylesheet" />
-  </head>
+    <link rel="stylesheet" href="./assets/custom-style.css" />
+  <script defer src="main.bundle.js"></script><link href="./main.css" rel="stylesheet"></head>
   <body class="page">
     <!-- SECTION 1 -->
     <section class="section s1 vh100 js-fade-s1">
@@ -79,18 +77,18 @@
     <!-- SECTION 3 -->
     <section class="section-case">
       <div class="row">
-        <div zoom-out class="card" style="--min-h: 542px">
+        <div class="card" style="--min-h: 542px">
           <div class="card__media" style="--bg: #072510">
             <!-- <img src="./assets/card1.png" alt="" /> -->
-            <video>
+            <video zoom-out>
               <source src="./assets/case/video-case.mp4" type="video/mp4" />
             </video>
           </div>
           <h3 class="card__desc">CRM и приложение сотрудника</h3>
         </div>
-        <div zoom-out class="card" style="--min-h: 1049px">
+        <div class="card" style="--min-h: 1049px">
           <div class="card__media" style="--bg: #241336">
-            <img src="./assets/case/card2.png" alt="" />
+            <img zoom-out src="./assets/case/card2.png" alt="" />
           </div>
           <h3 class="card__desc">Приложение жителя</h3>
         </div>
@@ -169,8 +167,8 @@
       <!-- row -->
       <div class="row" style="--min-h: 540px; --max-h: 700px">
         <div class="card">
-          <div class="card__media" style="--bg: blue">
-            <!-- <img src="./assets/card8.png" alt="" /> -->
+          <div class="card__media">
+            <img src="./assets/case/cardX.png" alt="" />
           </div>
           <h3 class="card__desc">
             Договорились с аккаунтингом компании, что при возникновении проблем
@@ -178,8 +176,8 @@
           </h3>
         </div>
         <div class="card">
-          <div class="card__media" style="--bg: red">
-            <!-- <img src="./assets/card8.png" alt="" /> -->
+          <div class="card__media">
+            <img src="./assets/case/cardX.png" alt="" />
           </div>
           <h3 class="card__desc">Селф-сервис</h3>
         </div>
@@ -187,8 +185,8 @@
       <!-- row -->
       <div class="row" style="--min-h: 540px">
         <div class="card">
-          <div class="card__media" style="--bg: orange">
-            <!-- <img src="./assets/card8.png" alt="" /> -->
+          <div class="card__media">
+            <img src="./assets/case/cardX.png" alt="" />
           </div>
           <h3 class="card__desc">Документация для партнёров компании</h3>
         </div>
@@ -207,19 +205,35 @@
       <!-- row -->
       <div class="row" style="--min-h: 542px; --max-h: 700px">
         <div class="card">
-          <div class="card__media" style="--bg: blue"></div>
+          <div class="card__media">
+            <div class="card__media">
+              <img src="./assets/case/cardX.png" alt="" />
+            </div>
+          </div>
         </div>
         <div class="card">
-          <div class="card__media" style="--bg: red"></div>
+          <div class="card__media">
+            <div class="card__media">
+              <img src="./assets/case/cardX.png" alt="" />
+            </div>
+          </div>
         </div>
       </div>
       <!-- row -->
       <div class="row">
         <div class="card" style="--min-h: 800px">
-          <div class="card__media" style="--bg: orange"></div>
+          <div class="card__media">
+            <div class="card__media">
+              <img src="./assets/case/cardX.png" alt="" />
+            </div>
+          </div>
         </div>
         <div class="card" style="--min-h: 542px">
-          <div class="card__media" style="--bg: blue"></div>
+          <div class="card__media">
+            <div class="card__media">
+              <img src="./assets/case/cardX.png" alt="" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -235,11 +249,19 @@
       <!-- row -->
       <div class="row" style="--min-h: 542px; --max-h: 700px">
         <div class="card">
-          <div class="card__media" style="--bg: blue"></div>
+          <div class="card__media">
+            <div class="card__media">
+              <img src="./assets/case/cardX.png" alt="" />
+            </div>
+          </div>
           <h3 class="card__desc">Компоненты</h3>
         </div>
         <div class="card">
-          <div class="card__media" style="--bg: red"></div>
+          <div class="card__media">
+            <div class="card__media">
+              <img src="./assets/case/cardX.png" alt="" />
+            </div>
+          </div>
           <h3 class="card__desc">Токены</h3>
         </div>
       </div>
@@ -247,7 +269,11 @@
       <div class="row">
         <div class="card"></div>
         <div class="card" style="--min-h: 542px">
-          <div class="card__media" style="--bg: blue"></div>
+          <div class="card__media">
+            <div class="card__media">
+              <img src="./assets/case/cardX.png" alt="" />
+            </div>
+          </div>
           <h3 class="card__desc">Гайды</h3>
         </div>
       </div>
@@ -255,7 +281,7 @@
     <!-- SECTION RESULTS -->
     <section class="section s2">
       <article class="s2__article">
-        <h2 class="s2__title large-title blurred" blur-transition>
+        <h2 class="s2__title large-title" blur-out>
           Достиг конверсии 70% при миграции клиентов с привычной платформы в
           новый продукт — наш,
           <span class="grey"
@@ -265,7 +291,7 @@
         </h2>
       </article>
       <article class="s2__article">
-        <h2 class="s2__title large-title" blur-transition>
+        <h2 class="s2__title large-title" blur-out>
           Ещё какой-то результат,
           <span class="grey">за счёт чего-то</span>
         </h2>
