@@ -5,6 +5,8 @@ const zoomElements = [...document.querySelectorAll('[zoom-out]')];
 
 const zoomOutObserver = observeElements(zoomElements, {
   onAppear: (elem) => {
+    // BUG: it is blinking when element appears in viewport and animation is coming
+    // it can cause infinite loop in browser
     animateZoomOut(elem);
   },
   onDisappear: (elem) => {
