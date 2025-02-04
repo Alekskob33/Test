@@ -20,13 +20,9 @@
     align-items: center
 
     width: 100%
-    min-height: var(--min-h, auto)
-    max-height: var(--max-h, auto)
     overflow: hidden
-    +mobile
-      min-height: auto
-      max-height: auto
-      padding: 30px 0
+    // +mobile
+      // padding: 30px 0
 
     margin-bottom: 10px
     border-radius: 8px
@@ -34,6 +30,12 @@
     background-color: var(--bg, transparent)
     img, video
       max-width: 100%
+      min-height: var(--min-h, auto)
+      max-height: var(--max-h, auto)
+      +mobile
+        min-height: auto
+        max-height: auto
+
   &__desc
     width: 100%
     margin-bottom: 20px
