@@ -29,15 +29,14 @@
 .link
   position: relative
   display: inline-block
-  text-decoration: none
+  text-decoration: underline
   line-height: 1.71em
-  &::after
-    content: ''
-    display: block
-    width: 100%
-    height: 1px
-    background-color: #212427
-    transition: 150ms
+  transition: 150ms
+  color: white
+  text-decoration-thickness: 1px
+  text-decoration-color: #212427
+  text-decoration-skip-ink: none
+  text-underline-offset: 7px
+
   &:hover
-    &::after
-      background-color: currentColor
+    text-decoration-color: currentColor ||
